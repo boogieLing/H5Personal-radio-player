@@ -7,7 +7,7 @@
 body {
   display: flex ;
   height: 100vh ;
-  background-color: #203744;
+  background-color: #1e272e;
   flex-direction: column ;
   position: relative ;
 }
@@ -18,8 +18,10 @@ body .lightCover {
   outline: 5000px solid rgba(0, 0, 0, 0);
   z-index: 1 !important;
 }
+#canvas_sakura {
+  z-index: 11 ;
+}
 .header {
-  box-sizing: border-box;
   display: flex ;
   min-height: 60px ;
   background-color: transparent ;
@@ -29,46 +31,72 @@ body .lightCover {
   position: relative ;
 }
 .header .catEars1 {
-  box-sizing: border-box;
-  width: 80px;
-  height: 80% ;
-  background-color: #ee827c;
-  clip-path: polygon(50% 0px, 100% 100%, 0px 100%);
-  -webkit-clip-path: polygon(50% 0px, 100% 100%, 0px 100%);
+  width: 0px ;
+  height: 0px ;
+  padding: 0 ;
+  margin: 0 ;
+  position: relative ;
+  border-top: 0px solid transparent;
+  border-bottom: 50px solid #636e72;
+  border-right: 30px solid transparent;
+  border-left: 30px solid transparent;
+  filter: drop-shadow(0px 0px 3px #000000);
+  z-index: 0 ;
+  /* clip-path:polygon(50% 0px,100% 100%,0px 100%) ;
+        -webkit-clip-path:polygon(50% 0px,100% 100%,0px 100%) ; */
 }
 .header .catEars1::after {
   content: "";
   position: absolute ;
-  width: 50px;
-  height: 70px ;
-  left: 50% ;
-  margin-left: -25px;
-  bottom: 0% ;
-  opacity: 0.5;
-  background: #ffeaa7;
-  clip-path: polygon(50% 40%, 100% 100%, 0px 100%);
-  -webkit-clip-path: polygon(50% 40%, 100% 100%, 0px 100%);
+  width: 0px;
+  height: 0px ;
+  padding: 0 ;
+  margin: 0 ;
+  opacity: 0.8;
+  bottom: -50px;
+  left: -20px;
+  border-style: solid ;
+  border-top: 0px solid transparent;
+  border-bottom: 30px solid #dfe6e9;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  filter: drop-shadow(0px -3px 3px #000000);
+  /* clip-path:polygon(50% 40% ,100% 100%,0px 100%) ;
+            -webkit-clip-path:polygon(50% 40% ,100% 100%,0px 100%) ;    */
 }
 .header .catEars2 {
-  box-sizing: border-box;
-  width: 80px;
-  height: 80% ;
-  background-color: #ee827c;
-  clip-path: polygon(50% 0px, 100% 100%, 0px 100%);
-  -webkit-clip-path: polygon(50% 0px, 100% 100%, 0px 100%);
+  width: 0px ;
+  height: 0px ;
+  padding: 0 ;
+  margin: 0 ;
+  position: relative ;
+  border-top: 0px solid transparent;
+  border-bottom: 50px solid #636e72;
+  border-right: 30px solid transparent;
+  border-left: 30px solid transparent;
+  filter: drop-shadow(0px 0px 3px #000000);
+  z-index: 0 ;
+  /* clip-path:polygon(50% 0px,100% 100%,0px 100%) ;
+        -webkit-clip-path:polygon(50% 0px,100% 100%,0px 100%) ; */
 }
 .header .catEars2::after {
   content: "";
   position: absolute ;
-  width: 50px;
-  height: 70px ;
-  left: 50% ;
-  margin-left: -25px;
-  bottom: 0% ;
-  opacity: 0.5;
-  background: #ffeaa7;
-  clip-path: polygon(50% 40%, 100% 100%, 0px 100%);
-  -webkit-clip-path: polygon(50% 40%, 100% 100%, 0px 100%);
+  width: 0px;
+  height: 0px ;
+  padding: 0 ;
+  margin: 0 ;
+  opacity: 0.8;
+  bottom: -50px;
+  left: -20px;
+  border-style: solid ;
+  border-top: 0px solid transparent;
+  border-bottom: 30px solid #dfe6e9;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  filter: drop-shadow(0px -3px 3px #000000);
+  /* clip-path:polygon(50% 40% ,100% 100%,0px 100%) ;
+            -webkit-clip-path:polygon(50% 40% ,100% 100%,0px 100%) ;    */
 }
 main {
   display: flex ;
@@ -95,7 +123,6 @@ main .songRate {
   -webkit-box-shadow: 0px 0px 5px #535c68 inset;
   -moz-box-shadow: 0px 0px 5px #535c68 inset;
   box-shadow: 0px 0px 5px #535c68 inset;
-  z-index: 2 ;
 }
 main .songRate:hover {
   top: 0px ;
@@ -109,7 +136,6 @@ main .songRateBack {
   transform: translateX(0%);
   transition: 0.1s;
   background-color: #fdeff2;
-  z-index: 2 ;
 }
 main .songRateBack::before {
   content: "";
@@ -135,7 +161,6 @@ main .catBody .songRateShow {
   -webkit-box-shadow: 0px -2px 7px #535c68;
   -moz-box-shadow: 0px -2px 7px #535c68;
   box-shadow: 0px -2px 7px #535c68;
-  z-index: 2 ;
 }
 main .catBody .bodyBackgroud {
   position: absolute;
@@ -484,8 +509,8 @@ main .catBody .showInfo .setInfo {
 main .catBody .showInfo .setInfo span {
   position: relative ;
   margin-top: 15px ;
-  margin-right: 15px;
   max-height: 40px ;
+  max-width: 60% ;
   text-align: right;
   padding: 10px ;
   font-size: 1em ;
@@ -494,6 +519,11 @@ main .catBody .showInfo .setInfo span {
   text-shadow: 5px 5px 5px #2d3436;
   user-select: none;
   white-space: nowrap ;
+  transition: 0.5s;
+}
+main .catBody .showInfo .setInfo span a {
+  transition: 0.5s;
+  color: #2d3436;
 }
 main .catBody .showInfo .setInfo span .infoDescrit {
   position: absolute ;
@@ -502,6 +532,7 @@ main .catBody .showInfo .setInfo span .infoDescrit {
   font-size: 0.6em;
   line-height: 1em ;
   padding: 5px ;
+  transition: 0.5s;
   border-bottom: solid 1px black ;
 }
 main .catBody .showInfo .setInfo span::after {
@@ -512,6 +543,16 @@ main .catBody .showInfo .setInfo span::after {
   bottom: 5px ;
   border-top: solid 2px #2d3436;
   animation: typeBlink 500ms steps(44) infinite normal;
+}
+main .catBody .showInfo .setInfo span:hover {
+  background-color: #2d3436;
+  color: #b1b1b1;
+}
+main .catBody .showInfo .setInfo span:hover a {
+  color: #b1b1b1;
+}
+main .catBody .showInfo .setInfo span:hover .iconfont {
+  color: #b1b1b1;
 }
 main .catBody .showInfo .lightness {
   position: absolute ;
@@ -528,8 +569,50 @@ main .catBody .showInfo .lightness .lightnessBack {
   height: 150px ;
   top: 145px ;
   left: 220px ;
+  cursor: pointer;
+}
+main .catBody .showInfo .lightness .lightnessBack div {
+  position: absolute ;
+  width: 150px ;
+  height: 150px ;
+  background-position: bottom ;
   background: url("../img/moon_2.png");
   z-index: 11 ;
+}
+main .catBody .showInfo .lightness .lightnessBack .iconfont {
+  position: absolute ;
+  width: 70px ;
+  height: 70px ;
+  top: 50% ;
+  margin-top: -35px;
+  left: 50% ;
+  color: rgba(250, 177, 160, 0.5);
+  margin-left: -35px;
+  line-height: 70px ;
+  text-align: center ;
+  font-size: 50px ;
+  text-shadow: 0px 0px 10px #fab1a0;
+  transition: 0.5s;
+  transform: scale(0);
+  transform-origin: center ;
+  z-index: 10 ;
+  cursor: pointer;
+}
+main .catBody .showInfo .lightness .lightnessBack .iconfont::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: 50%;
+  margin-top: -100%;
+  left: 50%;
+  margin-left: -100%;
+  border-radius: 50%;
+  background-color: #fab1a0;
+  -webkit-filter: blur(40px);
+  -moz-filter: blur(40px);
+  -ms-filter: blur(40px);
+  filter: blur(30px);
 }
 main .catBody .showInfo .lightness .lightnessSet {
   position: absolute ;
@@ -806,6 +889,36 @@ main footer {
   -moz-box-shadow: 0px -8px 8px black;
   box-shadow: 0px -8px 8px black;
   display: flex ;
+}
+main footer .wave {
+  position: absolute;
+  bottom: 0 ;
+  height: 285px ;
+  width: 300% ;
+  bottom: -100px;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+main footer .wave::-webkit-scrollbar {
+  display: none;
+}
+main footer .wave .wave2 {
+  position: absolute ;
+  width: 100% ;
+  height: 285px ;
+  background-image: url("../img/wave2.png");
+  background-repeat: repeat-x;
+  transform: translateX(-250px);
+}
+main footer .wave .wave1 {
+  position: absolute ;
+  width: 100% ;
+  height: 285px ;
+  background-image: url("../img/wave1.png");
+  background-repeat: repeat-x;
+  transform: translateX(0px);
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7));
 }
 main footer ul {
   position: absolute ;
