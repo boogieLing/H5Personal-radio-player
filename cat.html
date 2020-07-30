@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="ad1wo-wia6q-002.ico">
+    <title>broadCasting</title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1962070_ly16ygjk2.css" />
+    <link rel="stylesheet" type="text/css" href="css/cat_2.css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/yinghua.js"></script>
+    <script type="text/javascript" src="js/getJson.js"></script>
+    <script type="text/javascript" src="js/cat_1.js"></script>
+</head>
+<body>
+    <div class="lightCover"></div>
+    <div class="header">
+        <div class="shaky catEars1"></div>
+        <div class="shaky catEars2"></div>
+    </div>
+    <main>
+        <div class="songRate "></div>
+        <div class="songRateBack"></div>
+
+        <div class="catBody">
+            <div class="songRateShow"></div>
+            <div class="bodyBackgroud" ></div>
+            <div class="bodyBackgroud2" ></div>
+            <div class="myLrcCont ">
+                <a class="lrcbtn myComment" title="Show comments"><i class="iconfont icon-Comment4"></i></a>
+                <a class="lrcbtn myBack" title="Back"><i class="iconfont icon-back"></i></a>
+                <a class="lrcbtn lrcLoad" title="Reload LRC or comments"><i class="iconfont icon-Refreshsyncreload1"></i></a>
+                <ul id="lyric"></ul>
+                <ul id="comments">
+                        <div><i class="iconfont icon-Comment4"></i> -COMMENTS-</div> 
+                    <li>
+                        <img class="userPic" src="">
+                        <div class="userName">name</div>
+                        <p class="userWord">到点了上号！</p>
+                        <div class="userWordTime">Time</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="showInfo show2hidden ">
+                <div class="lightness">
+                    <div class="lightnessBack"></div>
+                    <div class="lightnessSet"></div>
+                </div>
+                <div class="setInfo">
+                    <span class="info"><i class="iconfont icon-CatFootprint"></i>
+                        BoogieLing'o
+                        <div class="infoDescrit">Author's name.</div>
+                    </span>
+                    <span class="info"><i class="iconfont icon-Musicyinle"></i>
+                        <a href="https://music.163.com/" target="_blank"  style=" text-decoration: none;z-index:1;">163music</a>
+                        <div class="infoDescrit">Provision of resources.</div>
+                    </span>
+                    <span class="info">
+                        Author-made music
+                        <div class="infoDescrit">What is this?</div>
+                    </span>
+                    <span class="info"><i class="iconfont icon-github"></i>
+                        Github
+                        <div class="infoDescrit">Project and instructions for use.</div>
+                    </span>
+
+                </div>
+            </div>
+            <div class="curPic">
+                <ul class="picMenu">
+                    <li>
+                        <a href="javascript:;" class="myType" title="Change dj or song">
+                            <span>-DJAUDIO-</span>
+                            <i class="iconfont icon-song"></i>
+                        </a>
+                        <span class="descript">Switch DJ-station or Songs.</span>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="myInfo">
+                            <span>-INFO-</span>
+                            <i class="iconfont icon-Options_"></i>
+                        </a>
+                        <span class="descript">Information about this station.</span>
+                    </li>
+                    <li>
+                        <a href="javascript:;" class="myHidden">
+                            <span>-HIDDEN-</span>
+                            <i class="iconfont icon-close-small"></i>
+                        </a>
+                        <span class="descript">Hidden the pic.</span>
+                    </li>
+                </ul>
+                <img src="http://p1.music.126.net/l9yzW-YmRN6mM_eJ7sFBLg==/18745573743529341.jpg?param=180y180" class="songPic scale1S"><div class="opa1S"></div>
+            </div>
+            <div class="songListBox">
+                <div class="listName">LIST...</div> 
+                <ul class="songList"><div></div><!-- <li class=" ">LIST...</li> --> </ul>  
+            </div>
+        </div>
+        <footer>
+            <div class="Audio">
+                <audio id="Audio_1"></audio>
+            </div> 
+            <ul>
+                <li>
+                    <a href="javascript:;" class="myPrevious">
+                        <i class="iconfont icon-leftturn_line"></i>
+                        <span> -PREV</span>
+                    </a>    
+                </li>
+                <li>
+                    <a href="javascript:;" class="myPlay">
+                        <i class="iconfont icon-play"></i>
+                        <span> -PLAY</span>
+                    </a> 
+                </li>
+                <li>
+                    <a href="javascript:;" class="myPause">
+                        <i class="iconfont icon-pause"></i>
+                        <span> -PAUS</span>
+                    </a> 
+                </li>
+                <li>
+                    <a href="javascript:;" class="myNext">
+                        <i class="iconfont icon-right"></i>
+                        <span> -NEXT</span>
+                    </a> 
+                </li>
+                <div class="myRandom">
+                    <i class="iconfont icon-order-play-fill"></i>
+                </div>
+            </ul>
+            <div class="songTitle">WAITING...
+                <div class="songAutor">AUTOR...</div>
+                <div class="songGroup">CREATOR...</div>
+            </div>         
+        </footer>
+    </main>
+    
+</body>
+</html>

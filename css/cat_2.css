@@ -1,0 +1,1057 @@
+@import url("cat_3.css");
+* {
+  padding: 0 ;
+  margin: 0 ;
+  box-sizing: border-box;
+}
+body {
+  display: flex ;
+  height: 100vh ;
+  background-color: #203744;
+  flex-direction: column ;
+  position: relative ;
+}
+body .lightCover {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  outline: 5000px solid rgba(0, 0, 0, 0);
+  z-index: 1 !important;
+}
+.header {
+  box-sizing: border-box;
+  display: flex ;
+  min-height: 60px ;
+  background-color: transparent ;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-direction: row ;
+  position: relative ;
+}
+.header .catEars1 {
+  box-sizing: border-box;
+  width: 80px;
+  height: 80% ;
+  background-color: #ee827c;
+  clip-path: polygon(50% 0px, 100% 100%, 0px 100%);
+  -webkit-clip-path: polygon(50% 0px, 100% 100%, 0px 100%);
+}
+.header .catEars1::after {
+  content: "";
+  position: absolute ;
+  width: 50px;
+  height: 70px ;
+  left: 50% ;
+  margin-left: -25px;
+  bottom: 0% ;
+  opacity: 0.5;
+  background: #ffeaa7;
+  clip-path: polygon(50% 40%, 100% 100%, 0px 100%);
+  -webkit-clip-path: polygon(50% 40%, 100% 100%, 0px 100%);
+}
+.header .catEars2 {
+  box-sizing: border-box;
+  width: 80px;
+  height: 80% ;
+  background-color: #ee827c;
+  clip-path: polygon(50% 0px, 100% 100%, 0px 100%);
+  -webkit-clip-path: polygon(50% 0px, 100% 100%, 0px 100%);
+}
+.header .catEars2::after {
+  content: "";
+  position: absolute ;
+  width: 50px;
+  height: 70px ;
+  left: 50% ;
+  margin-left: -25px;
+  bottom: 0% ;
+  opacity: 0.5;
+  background: #ffeaa7;
+  clip-path: polygon(50% 40%, 100% 100%, 0px 100%);
+  -webkit-clip-path: polygon(50% 40%, 100% 100%, 0px 100%);
+}
+main {
+  display: flex ;
+  position: relative ;
+  box-sizing: border-box;
+  overflow: hidden ;
+  flex: 1 ;
+  background-color: #fdeff2;
+  flex-direction: column ;
+  border-bottom-left-radius: 0 ;
+  border-bottom-right-radius: 0 ;
+  -webkit-box-shadow: 0px 0px 7px #c7ecee;
+  -moz-box-shadow: 0px 0px 7px #c7ecee;
+  box-shadow: 0px 0px 7px #c7ecee;
+}
+main .songRate {
+  position: absolute ;
+  width: 100%  ;
+  height: 13px ;
+  top: 7px ;
+  transition: 0.3s;
+  opacity: 1 ;
+  background-image: linear-gradient(125deg, #eb4d4b, #f0932b, #b1b1b1, #2c3e50, #27ae60, #2980b9, #e74c3c, #8e44ad);
+  -webkit-box-shadow: 0px 0px 5px #535c68 inset;
+  -moz-box-shadow: 0px 0px 5px #535c68 inset;
+  box-shadow: 0px 0px 5px #535c68 inset;
+  z-index: 2 ;
+}
+main .songRate:hover {
+  top: 0px ;
+  height: 20px ;
+}
+main .songRateBack {
+  overflow: visible ;
+  min-height: 20px ;
+  width: 100% ;
+  opacity: 1 ;
+  transform: translateX(0%);
+  transition: 0.1s;
+  background-color: #fdeff2;
+  z-index: 2 ;
+}
+main .songRateBack::before {
+  content: "";
+}
+main .catBody {
+  position: relative ;
+  flex: 1 ;
+  margin: 0px ;
+  margin-top: 0px ;
+  -webkit-box-shadow: 0px -2px 7px #535c68;
+  -moz-box-shadow: 0px -2px 7px #535c68;
+  box-shadow: 0px -2px 7px #535c68;
+}
+main .catBody .songRateShow {
+  position: absolute ;
+  width: 3px ;
+  height: 35px ;
+  top: -20px;
+  left: 0px ;
+  background-color: #f1f2f6;
+  transition: 0.3s;
+  /* ?Ӱ */
+  -webkit-box-shadow: 0px -2px 7px #535c68;
+  -moz-box-shadow: 0px -2px 7px #535c68;
+  box-shadow: 0px -2px 7px #535c68;
+  z-index: 2 ;
+}
+main .catBody .bodyBackgroud {
+  position: absolute;
+  top: 0 ;
+  left: 0 ;
+  width: 100% ;
+  height: 100% ;
+  background-color: #b2bec3;
+  -webkit-filter: blur(10px);
+  /* Chrome, Opera */
+  -moz-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+}
+main .catBody .bodyBackgroud2 {
+  position: absolute ;
+  width: 39% ;
+  height: 90% ;
+  left: 0% ;
+  background-color: red ;
+  transform-origin: left ;
+  opacity: 0.8;
+  -webkit-filter: blur(5px);
+  /* Chrome, Opera */
+  -moz-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  transition: 0.6s;
+  transform: translateX(-110%);
+}
+main .catBody .myLrcCont {
+  position: absolute ;
+  width: 61% ;
+  height: 90% ;
+  clip: rect(auto, auto, auto, -40px);
+  background-color: #2d3436;
+  left: 39% ;
+  top: 0% ;
+  -webkit-box-shadow: 0px 0px 7px #535c68;
+  -moz-box-shadow: 0px 0px 7px #535c68;
+  box-shadow: 0px 0px 7px #535c68;
+  transition: 0.6s;
+  transform-origin: right ;
+  transform: translateX(110%);
+}
+main .catBody .myLrcCont .lrcbtn {
+  position: absolute ;
+  width: 40px ;
+  height: 40px ;
+  background-color: #dff9fb;
+  -webkit-box-shadow: 0px 0px 7px #535c68;
+  -moz-box-shadow: 0px 0px 7px #535c68;
+  box-shadow: 0px 0px 7px #535c68;
+  transition: 0.3s;
+  text-align: center ;
+  cursor: pointer ;
+  z-index: 1 ;
+}
+main .catBody .myLrcCont .lrcbtn .iconfont {
+  font-size: 25px ;
+  text-align: center ;
+  color: black ;
+  line-height: 40px ;
+  transition: 0.5s;
+}
+main .catBody .myLrcCont .lrcbtn::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute ;
+  border: solid 2px #7ed6df;
+  width: 130% ;
+  height: 130% ;
+  left: 50% ;
+  margin-left: -65%;
+  top: 50% ;
+  margin-top: -65%;
+  transition: 0.3s;
+  transform: scale(0);
+  transform-origin: 50% 50% ;
+  -webkit-box-shadow: 0px 0px 7px #535c68;
+  -moz-box-shadow: 0px 0px 7px #535c68;
+  box-shadow: 0px 0px 7px #535c68;
+  z-index: -1;
+}
+main .catBody .myLrcCont .lrcbtn::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute ;
+  border: solid 1px #22a6b3;
+  width: 150% ;
+  height: 150% ;
+  left: 50% ;
+  margin-left: -75%;
+  top: 50% ;
+  margin-top: -75%;
+  transition: 0.3s;
+  transform: scale(0);
+  transform-origin: 50% 50% ;
+  -webkit-box-shadow: 0px 0px 7px #535c68;
+  -moz-box-shadow: 0px 0px 7px #535c68;
+  box-shadow: 0px 0px 7px #535c68;
+  z-index: -1;
+}
+main .catBody .myLrcCont .lrcbtn:hover {
+  opacity: 0.9;
+  transform: rotateZ(45deg);
+  background-size: 300%;
+  animation: bgAnimation 5s infinite ;
+  cursor: pointer ;
+}
+main .catBody .myLrcCont .lrcbtn:hover .iconfont {
+  color: white ;
+  font-size: 30px ;
+}
+main .catBody .myLrcCont .lrcbtn:hover::before {
+  transform: scale(1);
+  animation: btnRote1 2s infinite ;
+}
+main .catBody .myLrcCont .lrcbtn:hover::after {
+  transform: scale(1);
+  animation: btnRote2 2s infinite ;
+}
+main .catBody .myLrcCont .myComment {
+  left: -20px;
+  top: 30px ;
+}
+main .catBody .myLrcCont .myComment::before {
+  border: solid 1px #ff7675;
+}
+main .catBody .myLrcCont .myComment::after {
+  border: solid 2px #f8a5c2;
+}
+main .catBody .myLrcCont .myComment:hover {
+  background-image: linear-gradient(125deg, #130f40, #30336b, #e056fd, #ff7979, #eb4d4b);
+}
+main .catBody .myLrcCont .myBack {
+  left: -20px;
+  top: 130px ;
+}
+main .catBody .myLrcCont .myBack::before {
+  border: solid 1px #00b894;
+}
+main .catBody .myLrcCont .myBack::after {
+  border: solid 2px #63cdda;
+}
+main .catBody .myLrcCont .myBack:hover {
+  background-image: linear-gradient(125deg, #63cdda, #546de5, #778beb, #18dcff, #32ff7e);
+}
+main .catBody .myLrcCont .lrcLoad {
+  left: -20px;
+  top: 230px ;
+}
+main .catBody .myLrcCont .lrcLoad::before {
+  border: solid 1px #f1c40f;
+}
+main .catBody .myLrcCont .lrcLoad::after {
+  border: solid 2px #f7d794;
+}
+main .catBody .myLrcCont .lrcLoad:hover {
+  background-image: linear-gradient(125deg, #ff9f1a, #fff200, #fffa65, #fab1a0, #ff7675);
+}
+main .catBody .myLrcCont #lyric {
+  position: absolute ;
+  display: flex ;
+  flex-direction: column;
+  align-self: center;
+  user-select: none;
+  list-style: none;
+  width: 100% ;
+  white-space: nowrap ;
+  text-align: center ;
+  overflow: auto ;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  transition: 0.5s;
+}
+main .catBody .myLrcCont #lyric li {
+  box-sizing: border-box;
+  min-width: 60% ;
+  min-height: 40px ;
+  max-height: 40px ;
+  line-height: 40px ;
+  margin-bottom: 5px ;
+  flex: 1 ;
+  transition: 0.3s;
+  background-color: transparent ;
+  text-align: center ;
+  vertical-align: middle ;
+  text-shadow: 5px 5px 10px black;
+  color: #fff;
+  font-size: 0.8em;
+  font-weight: 300 ;
+  letter-spacing: 2px;
+}
+main .catBody .myLrcCont #lyric::-webkit-scrollbar {
+  display: none;
+}
+main .catBody .myLrcCont #comments {
+  position: absolute ;
+  display: flex ;
+  width: 70% ;
+  height: 100% ;
+  background-color: #ecf0f1;
+  top: 0 ;
+  right: 0 ;
+  -webkit-box-shadow: 0px 0px 7px #bdc3c7;
+  -moz-box-shadow: 0px 0px 7px #bdc3c7;
+  box-shadow: 0px 0px 7px #bdc3c7;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  flex-direction: column ;
+  align-items: center ;
+  overflow: auto ;
+  list-style: none ;
+  transform: scaleX(0);
+  transform-origin: right ;
+  transition: 0.6s;
+}
+main .catBody .myLrcCont #comments::-webkit-scrollbar {
+  display: none;
+}
+main .catBody .myLrcCont #comments div {
+  margin-top: 10px ;
+  text-align: left ;
+  padding: 10px ;
+  font-size: 1.2em;
+  letter-spacing: 3px ;
+  font-weight: 300 ;
+  user-select: none ;
+}
+main .catBody .myLrcCont #comments li {
+  flex: 1 ;
+  display: flex ;
+  min-width: 90% ;
+  max-width: 90% ;
+  min-height: 140px ;
+  max-height: 140px ;
+  background-color: red ;
+  margin-top: 40px ;
+  position: relative ;
+  background-color: #b2bec3;
+  -webkit-box-shadow: 0px 0px 7px black inset;
+  -moz-box-shadow: 0px 0px 7px black inset;
+  box-shadow: 0px 0px 7px black inset ;
+}
+main .catBody .myLrcCont #comments li .userPic {
+  flex: 0 ;
+  box-sizing: border-box;
+  min-width: 80px ;
+  max-width: 80px ;
+  min-height: 80px ;
+  max-height: 80px ;
+  top: 0 ;
+  left: 0 ;
+  margin: 10px ;
+  background-color: #b1b1b1;
+  -webkit-box-shadow: 0px 0px 7px #2d3436;
+  -moz-box-shadow: 0px 0px 7px #2d3436;
+  box-shadow: 0px 0px 7px #2d3436;
+}
+main .catBody .myLrcCont #comments li .userName {
+  position: absolute ;
+  width: 80px ;
+  height: 30px ;
+  bottom: 20px ;
+  padding: 10px ;
+  font-size: 0.6em;
+  font-weight: 500 ;
+  white-space: nowrap ;
+  text-align: center ;
+  text-shadow: 5px 5px 5px #2d3436;
+}
+main .catBody .myLrcCont #comments li .userWord {
+  flex: 1 ;
+  margin: 10px ;
+  margin-left: 0 ;
+  background-color: #ecf0f1;
+  font-size: 0.8em;
+  text-indent: 2em;
+  padding: 15px ;
+  letter-spacing: 2.5px;
+  line-height: 2em ;
+  overflow: auto ;
+  text-shadow: 5px 5px 10px #2d3436;
+  -webkit-box-shadow: 0px 0px 7px #2d3436;
+  -moz-box-shadow: 0px 0px 7px #2d3436;
+  box-shadow: 0px 0px 7px #2d3436;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+main .catBody .myLrcCont #comments li .userWord::-webkit-scrollbar {
+  display: none;
+}
+main .catBody .myLrcCont #comments li .userWordTime {
+  position: absolute ;
+  box-sizing: border-box;
+  margin: 0 ;
+  padding: 0 ;
+  width: auto ;
+  height: 2em ;
+  font-size: 0.8em;
+  top: -20px;
+  left: 10px ;
+  color: black ;
+  text-shadow: 5px 5px 5px #2d3436;
+  user-select: none;
+  white-space: nowrap ;
+  text-align: center ;
+  z-index: 1 ;
+}
+main .catBody .myLrcCont #comments li .userWordTime::after {
+  content: "";
+  position: absolute ;
+  width: 130% ;
+  height: 15px ;
+  bottom: 0px ;
+  right: 0 ;
+  background-color: #55efc4;
+  z-index: -1;
+  -webkit-box-shadow: 5px 5px 7px #2d3436;
+  -moz-box-shadow: 5px 5px 7px #2d3436;
+  box-shadow: 5px 5px 7px #2d3436;
+}
+main .catBody .showInfo {
+  position: absolute ;
+  width: 400px ;
+  height: 90% ;
+  left: 0 ;
+  top: 0;
+  transition: 0.5s;
+  background-image: radial-gradient(150% 167% at 100% 0%, transparent 60%, #81ecec, #55efc4, #ffeaa7);
+}
+main .catBody .showInfo .setInfo {
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  overflow: hidden;
+}
+main .catBody .showInfo .setInfo span {
+  position: relative ;
+  margin-top: 15px ;
+  margin-right: 15px;
+  max-height: 40px ;
+  text-align: right;
+  padding: 10px ;
+  font-size: 1em ;
+  color: #2d3436;
+  letter-spacing: 2px ;
+  text-shadow: 5px 5px 5px #2d3436;
+  user-select: none;
+  white-space: nowrap ;
+}
+main .catBody .showInfo .setInfo span .infoDescrit {
+  position: absolute ;
+  bottom: -10px;
+  right: 0px ;
+  font-size: 0.6em;
+  line-height: 1em ;
+  padding: 5px ;
+  border-bottom: solid 1px black ;
+}
+main .catBody .showInfo .setInfo span::after {
+  content: "";
+  position: absolute;
+  width: 10px ;
+  right: 0 ;
+  bottom: 5px ;
+  border-top: solid 2px #2d3436;
+  animation: typeBlink 500ms steps(44) infinite normal;
+}
+main .catBody .showInfo .lightness {
+  position: absolute ;
+  bottom: 0 ;
+  left: 0 ;
+  width: 400px ;
+  height: 533px ;
+  background-position: bottom ;
+  background: url("../img/rabbit.png");
+}
+main .catBody .showInfo .lightness .lightnessBack {
+  position: absolute ;
+  width: 150px ;
+  height: 150px ;
+  top: 145px ;
+  left: 220px ;
+  background: url("../img/moon_2.png");
+  z-index: 11 ;
+}
+main .catBody .showInfo .lightness .lightnessSet {
+  position: absolute ;
+  top: 0 ;
+  left: 0 ;
+  width: 150px ;
+  height: 150px ;
+  background: url("../img/moon.png");
+  z-index: 12 ;
+}
+main .catBody .curPic {
+  position: absolute;
+  width: 24vw ;
+  height: 24vw ;
+  left: 50% ;
+  margin-left: -12vw;
+  top: 40% ;
+  margin-top: -12vw;
+  transform: scaleX(1);
+  transition: 0.6s;
+  animation-name: moveForPic1 ;
+  animation-duration: 0.6s;
+  animation-direction: normal ;
+  animation-iteration-count: 1 ;
+  animation-timing-function: linear ;
+  animation-fill-mode: forwards ;
+  -webkit-animation-play-state: paused;
+  -ms-animation-play-state: paused;
+  animation-play-state: paused;
+  user-select: none;
+}
+main .catBody .curPic .picMenu {
+  position: absolute ;
+  width: 100% ;
+  height: 80% ;
+  right: -65%;
+  top: 50% ;
+  margin-top: -40%;
+  transition: 0.5s;
+  transform: scaleX(0);
+  transform-origin: left ;
+}
+main .catBody .curPic .picMenu li {
+  position: absolute ;
+  list-style: none ;
+  box-sizing: border-box;
+  width: 100% ;
+  height: 33% ;
+  border-bottom: solid 30px #fff;
+  box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+main .catBody .curPic .picMenu li .descript {
+  box-sizing: border-box;
+  position: absolute ;
+  right: 40px ;
+  bottom: -25px;
+  font-size: 0.6em;
+  line-height: 1em ;
+  color: black ;
+  transition: 0.5s;
+  padding: 5px ;
+  border-bottom: solid 1px black ;
+  user-select: none;
+  z-index: -1;
+}
+main .catBody .curPic .picMenu li a {
+  position: absolute ;
+  right: 0 ;
+  bottom: -5px;
+  text-decoration: none ;
+  display: block ;
+  line-height: 100%;
+  text-align: right;
+  transition: 0.5s;
+  color: #333;
+}
+main .catBody .curPic .picMenu li a span {
+  font-size: 1.5em;
+  letter-spacing: 3px ;
+  color: #333;
+  margin-right: 5px ;
+  text-shadow: -10px 10px 4px rgba(0, 0, 0, 0.5);
+  transition: 0.5s;
+}
+main .catBody .curPic .picMenu li a .iconfont {
+  font-size: 25px ;
+  color: red ;
+  line-height: 20px ;
+  transition: 0.5s;
+  margin-right: 5px ;
+  text-shadow: -10px 10px 4px red;
+}
+main .catBody .curPic .picMenu li:hover {
+  opacity: 0.7;
+  border-bottom: solid 30px rgba(255, 255, 255, 0);
+  background-image: linear-gradient(125deg, #55efc4, #00cec9, #00b894, #6c5ce7, #fd79a8, #fdcb6e, #ffeaa7, #d63031);
+  background-size: 300%;
+  animation: bgAnimation 5s infinite ;
+}
+main .catBody .curPic .picMenu li:hover a {
+  bottom: 10px ;
+}
+main .catBody .curPic .picMenu li:hover span {
+  color: #fff;
+  font-size: 1.6em;
+}
+main .catBody .curPic .picMenu li:hover .descript {
+  color: transparent ;
+  border-bottom: solid 1px transparent ;
+}
+main .catBody .curPic .picMenu li:nth-child(1) {
+  transform: translateX(-30px);
+  top: 0%;
+}
+main .catBody .curPic .picMenu li:nth-child(2) {
+  transform: translateX(0px);
+  top: 33%;
+}
+main .catBody .curPic .picMenu li:nth-child(3) {
+  transform: translateX(-30px);
+  top: 66%;
+}
+main .catBody .songPic {
+  position: absolute ;
+  box-sizing: border-box;
+  width: 24vw ;
+  height: 24vw ;
+  border-radius: 50% ;
+  border: solid 8px #fff;
+  /* ?Ӱ */
+  -webkit-box-shadow: 0px 0px 11px black;
+  -moz-box-shadow: 0px 0px 11px black;
+  box-shadow: 0px 0px 11px black;
+  z-index: 1 ;
+}
+main .catBody .songPic + div {
+  position: absolute;
+  width: 26vw ;
+  height: 26vw ;
+  left: 50% ;
+  margin-left: -13vw;
+  top: 50% ;
+  margin-top: -13vw;
+  background-color: transparent ;
+  border-radius: 50% ;
+  box-shadow: 0 0 0 15px #fffff1 inset;
+  z-index: 2 ;
+}
+main .catBody .songListBox {
+  position: absolute ;
+  right: 0 ;
+  width: 200px ;
+  height: 100% ;
+  z-index: 1 ;
+}
+main .catBody .songListBox .listName {
+  content: "";
+  position: absolute ;
+  height: 30px ;
+  bottom: 25% ;
+  right: 0 ;
+  border-top: solid 3px #2d3436;
+  box-shadow: 5px 5px 5px #000000;
+  text-shadow: 5px 5px 5px #2d3436;
+  text-align: center;
+  padding-top: 0px ;
+  padding-right: 15px ;
+  user-select: none;
+  white-space: nowrap ;
+}
+main .catBody .songListBox .listName::after {
+  content: "";
+  position: absolute ;
+  width: 130% ;
+  height: 15px ;
+  bottom: 0px ;
+  right: 0 ;
+  background-color: #dff9fb;
+  box-shadow: 5px 5px 5px #000000;
+  z-index: -1;
+}
+main .catBody .songListBox .songList {
+  position: absolute ;
+  right: -200px;
+  top: 0px ;
+  width: 200px ;
+  transition: 0.6s;
+  max-height: 70% ;
+  overflow: auto ;
+  list-style: none;
+  display: flex ;
+  flex-direction: column;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  /* -webkit-box-shadow: 5px 5px 20px black;
+                -moz-box-shadow: 5px 5px 20px black;
+                box-shadow: 5px 5px 20px black */
+}
+main .catBody .songListBox .songList li {
+  box-sizing: border-box;
+  min-height: 40px ;
+  max-height: 40px ;
+  flex: 1 ;
+  margin-bottom: -3px;
+  -webkit-box-shadow: 5px 3px 10px black;
+  -moz-box-shadow: 5px 3px 10px black;
+  box-shadow: 5px 3px 10px black;
+  list-style: none ;
+  font-size: 0.8em;
+  text-shadow: 5px 5px 10px black;
+  line-height: 40px;
+  text-align: left;
+  padding-left: 5px ;
+  color: #2d3436;
+  transform: translateX(50px);
+  transition: color 0.8s, font-size 0.8s, transform 0.8s, background-color 1s;
+  user-select: none;
+  white-space: nowrap ;
+}
+main .catBody .songListBox .songList li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #81ecec;
+  z-index: -1;
+  transform: scaleY(0);
+  transition: transform 0.5s;
+  transform-origin: bottom;
+}
+main .catBody .songListBox .songList li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #81ecec;
+  z-index: -2;
+  transform: scaleY(0);
+  transition: transform 0.5s;
+  transform-origin: bottom;
+  filter: blur(30px);
+}
+main .catBody .songListBox .songList li:hover {
+  color: black ;
+  font-size: 1em;
+  transform: translateX(0px);
+}
+main .catBody .songListBox .songList li:hover::before {
+  transform: scaleY(1);
+  transition: transform 0.5s;
+  transform-origin: top ;
+}
+main .catBody .songListBox .songList li:hover::after {
+  transform: scaleY(1);
+  transition: transform 0.5s;
+  transform-origin: top;
+}
+main .catBody .songListBox .songList::-webkit-scrollbar {
+  display: none;
+}
+main footer {
+  position: absolute;
+  bottom: 0px ;
+  min-width: 100% ;
+  min-height: 10% ;
+  background-color: rgba(116, 125, 140, 0.6);
+  /* ?Ӱ */
+  -webkit-box-shadow: 0px -8px 8px black;
+  -moz-box-shadow: 0px -8px 8px black;
+  box-shadow: 0px -8px 8px black;
+  display: flex ;
+}
+main footer ul {
+  position: absolute ;
+  display: flex ;
+  bottom: 55px ;
+  left: 20px ;
+}
+main footer ul li {
+  list-style: none ;
+  margin: 0px ;
+}
+main footer ul li a {
+  text-decoration: none ;
+  display: block ;
+  width: 150px ;
+  height: 40px ;
+  background: #fff;
+  text-align: left ;
+  padding-left: 10px ;
+  transform: rotate(-30deg) skewX(15deg) translate(0, 0);
+  transition: 0.5s;
+  box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+}
+main footer ul li a .iconfont {
+  font-size: 20px ;
+  color: red ;
+  line-height: 20px ;
+  transition: 0.5s;
+  padding-right: 14px ;
+}
+main footer ul li a span {
+  position: absolute ;
+  top: 10px ;
+  color: #333;
+  letter-spacing: 3px ;
+  transition: 0.5s;
+}
+main footer ul li a::before {
+  content: "";
+  position: absolute ;
+  top: 5px ;
+  left: -10px;
+  height: 100% ;
+  width: 10px ;
+  background: #b1b1b1;
+  transition: 0.5s;
+  transform: rotate(0deg) skewY(-45deg);
+}
+main footer ul li a::after {
+  content: "";
+  position: absolute ;
+  bottom: -10px;
+  left: -5px;
+  height: 10px ;
+  width: 100% ;
+  background: #b1b1b1;
+  transition: 0.5s;
+  transform: rotate(0deg) skewX(-45deg);
+}
+main footer ul li a:hover {
+  transform: rotate(-20deg) skewX(15deg) translate(20px, -10px);
+  box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.7);
+  background-color: #dd4b38;
+}
+main footer ul li a:hover .iconfont {
+  font-size: 40px ;
+  color: #ffffff;
+  /* 
+                    -webkit-box-shadow: 0px 0px 12px rgb(0, 184, 148);
+                    -moz-box-shadow: 0px 0px 12px rgb(0, 184, 148);
+                    box-shadow: 0px 0px 12px rgb(0, 184, 148); 
+                    */
+}
+main footer ul li a:hover span {
+  color: #ffffff;
+}
+main footer ul li a:hover::after {
+  background-color: #dd4b39;
+}
+main footer ul li a:hover::before {
+  background-color: #A13A2B;
+}
+main footer ul .myRandom {
+  position: absolute ;
+  left: 90px ;
+  bottom: -25px;
+  width: 30px ;
+  height: 30px ;
+  transition: 0.5s;
+  background-color: #fff;
+  box-shadow: -20px 20px 10px rgba(0, 0, 0, 0.5);
+  transform: rotate(-30deg) skewX(15deg) translate(0, 0);
+}
+main footer ul .myRandom .iconfont {
+  font-size: 20px ;
+  color: red ;
+  line-height: 20px ;
+  transition: 0.5s;
+  padding-right: 14px ;
+}
+main footer ul .myRandom::before {
+  content: "";
+  position: absolute ;
+  top: 5px ;
+  left: -10px;
+  height: 100% ;
+  width: 10px ;
+  background: #b1b1b1;
+  transition: 0.5s;
+  transform: rotate(0deg) skewY(-45deg);
+}
+main footer ul .myRandom::after {
+  content: "";
+  position: absolute ;
+  bottom: -10px;
+  left: -5px;
+  height: 10px ;
+  width: 100% ;
+  background: #b1b1b1;
+  transition: 0.5s;
+  transform: rotate(0deg) skewX(-45deg);
+}
+main footer ul .myRandom:hover {
+  transform: rotate(-30deg) skewX(15deg) translate(10px, -10px);
+  box-shadow: -50px 50px 50px rgba(0, 0, 0, 0.7);
+  background-color: #dd4b38;
+  cursor: pointer ;
+}
+main footer ul .myRandom:hover::after {
+  background-color: #dd4b39;
+}
+main footer ul .myRandom:hover::before {
+  background-color: #A13A2B;
+}
+main footer ul .myRandom:hover .iconfont {
+  color: #ffffff;
+}
+main footer .songTitle {
+  z-index: 1 ;
+  font-family: sans-serif;
+  position: absolute ;
+  bottom: 80% ;
+  right: 8% ;
+  max-width: 50% ;
+  display: inline-block;
+  color: #ffff;
+  font-size: 2.5vw;
+  transition: 0.5s;
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  white-space: nowrap ;
+  text-shadow: 0px 2px 0px #c0c0c0, 0px 4px 0px #b0b0b0, 2px 2px 0px #a0a0a0, 4px 4px 0px #909090, 13px 13px 13px #000000;
+}
+main footer .songTitle .songAutor {
+  position: absolute ;
+  box-sizing: border-box;
+  height: 20px ;
+  top: -35px;
+  right: 40% ;
+  font-size: 15px ;
+  letter-spacing: 3px;
+  font-weight: 500 ;
+  color: #000000;
+  transition: 0.3s;
+  transform: scale(0);
+  text-shadow: 10px 10px 10px #2d3436;
+  white-space: nowrap ;
+}
+main footer .songTitle .songAutor::after {
+  content: "";
+  position: absolute ;
+  width: 130% ;
+  height: 60% ;
+  bottom: 0 ;
+  left: -5px;
+  background-color: #dff9fb;
+  z-index: -1;
+}
+main footer .songTitle .songGroup {
+  position: absolute ;
+  font-weight: 10 ;
+  bottom: -45px;
+  right: 10px ;
+  display: flex ;
+  font-size: 15px ;
+  letter-spacing: 3px ;
+  font-weight: 500 ;
+  color: #000000;
+  padding: 3px ;
+  transition: 0.3s;
+  transform: scale(0);
+  text-shadow: 10px 10px 10px #2d3436;
+  white-space: nowrap ;
+}
+main footer .songTitle .songGroup::after {
+  content: "";
+  position: absolute ;
+  width: 130% ;
+  height: 60% ;
+  bottom: 0 ;
+  right: 0 ;
+  background-color: #dff9fb;
+  z-index: -1;
+}
+main footer .songTitle::before {
+  content: "";
+  position: absolute ;
+  top: -3px;
+  left: 0px ;
+  box-sizing: border-box;
+  width: 100% ;
+  height: 3px ;
+  border-top: solid 3px #2d3436;
+  box-shadow: 5px 5px 5px #000000;
+  transform: scale(0);
+  transition: 0.3s;
+}
+main footer .songTitle::after {
+  content: "";
+  position: absolute ;
+  bottom: 0 ;
+  margin-bottom: -12px;
+  right: 0px ;
+  box-sizing: border-box;
+  width: 100% ;
+  height: 3px ;
+  border-bottom: solid 3px #2d3436;
+  box-shadow: 5px 5px 5px #000000;
+  transform: scale(0);
+  transition: 0.3s;
+}
+main footer .songTitle:hover {
+  transform: rotateY(10deg) translate(10px, -10px);
+}
+main footer .songTitle:hover .songAutor {
+  transform: scale(1);
+}
+main footer .songTitle:hover .songGroup {
+  transform: scale(1);
+}
+main footer .songTitle:hover::before {
+  transform: scale(1);
+}
+main footer .songTitle:hover::after {
+  transform: scale(1);
+}
