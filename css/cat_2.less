@@ -1106,3 +1106,1481 @@ main{
         }
     }
 }
+@import url("cat_3.css") ;
+*{
+    padding: 0 ;
+    margin: 0 ;
+    box-sizing: border-box ;
+}
+body{
+    display: flex ;
+    height: 100vh ;
+    //key
+    background-color: #1e272e ;
+    flex-direction: column ; 
+    position: relative ;
+    .lightCover{
+        position:fixed;
+        top: 0px;
+        left: 0px;
+        outline:5000px solid rgba(0, 0, 0, 0);//初始亮度
+        z-index: 1 !important;
+    }
+}
+#canvas_sakura{
+    z-index: 11 ;
+}
+
+.header{
+    //box-sizing: border-box;
+    display: flex ;
+    min-height: 60px ;
+    background-color: transparent ;
+    justify-content:space-around ;
+    align-items: flex-end ;
+    flex-direction: row ; 
+    position: relative ;
+    .myLogo{
+        height: 60px ;
+        width: 400px ;
+        //background-color: red ;
+        font-size: 30px ;
+        letter-spacing: 5px ;
+        color: #2d3436;
+        user-select: none;
+        text-align: center;
+        line-height: 60px ;
+        font-weight: 700 ;
+        text-shadow: 2px 2px 1px #2d3436, -2px -2px 2px black;
+        transition: 0.5s ;
+        transition-delay: 1s ;
+    }
+    .catEars1{
+        width:0px ;
+        height:0px ;
+        padding: 0 ;
+        margin: 0 ;
+        position: relative ;
+        //background-color:#ee827c ;
+        border-top: 0px solid transparent;
+        border-bottom: 50px solid #636e72;
+        border-right: 30px solid transparent;
+        border-left: 30px solid transparent;
+        filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 1));
+        z-index: 0 ;
+        /* clip-path:polygon(50% 0px,100% 100%,0px 100%) ;
+        -webkit-clip-path:polygon(50% 0px,100% 100%,0px 100%) ; */
+        &::after{
+            content:"";
+            position: absolute ;
+            width:0px;
+            height:0px ;
+            padding: 0 ;
+            margin: 0 ;
+            opacity: 0.8 ;
+            bottom: -50px;
+            left: -20px;
+            //background:rgb(255, 234, 167);
+            border-style: solid ;
+            border-top: 0px solid transparent;
+            border-bottom: 30px solid #dfe6e9;
+            border-right: 20px solid transparent;
+            border-left: 20px solid transparent;
+            filter: drop-shadow(0px -3px 3px rgba(0, 0, 0, 1));
+            /* clip-path:polygon(50% 40% ,100% 100%,0px 100%) ;
+            -webkit-clip-path:polygon(50% 40% ,100% 100%,0px 100%) ;    */         
+        }     
+    }
+    .catEars2{
+        width:0px ;
+        height:0px ;
+        padding: 0 ;
+        margin: 0 ;
+        position: relative ;
+        //background-color:#ee827c ;
+        border-top: 0px solid transparent;
+        border-bottom: 50px solid #636e72;
+        border-right: 30px solid transparent;
+        border-left: 30px solid transparent;
+        filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 1));
+        z-index: 0 ;
+        /* clip-path:polygon(50% 0px,100% 100%,0px 100%) ;
+        -webkit-clip-path:polygon(50% 0px,100% 100%,0px 100%) ; */
+        &::after{
+            content:"";
+            position: absolute ;
+            width:0px;
+            height:0px ;
+            padding: 0 ;
+            margin: 0 ;
+            opacity: 0.8 ;
+            bottom: -50px;
+            left: -20px;
+            //background:rgb(255, 234, 167);
+            border-style: solid ;
+            border-top: 0px solid transparent;
+            border-bottom: 30px solid #dfe6e9;
+            border-right: 20px solid transparent;
+            border-left: 20px solid transparent;
+            filter: drop-shadow(0px -3px 3px rgba(0, 0, 0, 1));
+            /* clip-path:polygon(50% 40% ,100% 100%,0px 100%) ;
+            -webkit-clip-path:polygon(50% 40% ,100% 100%,0px 100%) ;    */         
+        }     
+    }
+}
+
+main{
+    display: flex ; 
+    position: relative ;
+    box-sizing: border-box;
+    overflow: hidden ;
+    flex: 1 ;
+    background-color: #fdeff2 ;
+    flex-direction:column ;
+    //border-radius: 11%~"/"30% ;
+    border-bottom-left-radius: 0 ; 
+    border-bottom-right-radius:0 ;
+
+    -webkit-box-shadow: 0px 0px 7px rgb(199, 236, 238);
+    -moz-box-shadow: 0px 0px 7px rgb(199, 236, 238);
+    box-shadow: 0px 0px 7px rgb(199, 236, 238);
+    .songRate{
+        position: absolute ;
+        width: 100%  ;
+        height: 13px ;
+        top: 7px ;
+        transition: 0.3s ;
+        opacity: 1 ;
+        background-image: linear-gradient(125deg,#eb4d4b,#f0932b,#b1b1b1, #2c3e50,#27ae60,#2980b9,#e74c3c,#8e44ad) ;
+        -webkit-box-shadow: 0px 0px 5px rgb(83, 92, 104) inset;
+        -moz-box-shadow: 0px 0px 5px rgb(83, 92, 104) inset;
+        box-shadow: 0px 0px 5px rgb(83, 92, 104) inset;
+        //z-index: 2 ;
+        &:hover{
+            top: 0px ;
+            height: 20px ;
+        }
+    }
+    .songRateBack{
+        overflow:visible ;
+        min-height: 20px ;
+        width: 100% ;
+        opacity: 1 ;
+        transform: translateX(0%);
+        transition: 0.1s ;
+        //transform: translateX(10%);
+        background-color: #fdeff2;
+        //z-index: 2 ;
+        &::before{
+            content:"" ;
+        }
+    }
+    .searchPage{
+        position: absolute ;
+        width: 100% ;
+        height: 100% ;
+        margin: 0 ;
+        padding: 0 ;
+        background-color: #1e272e ;
+        display: flex ;
+        flex-direction: column ;
+        justify-content: center;
+        align-items: center;
+        overflow: auto; 
+        transition: 0.5s ;
+        a{
+            position: relative;
+            display: inline-block;
+            padding: 15px 30px ;
+            color: #f1f2f6 ;
+            text-transform: uppercase;
+            letter-spacing: 4px ;
+            font-size: 24px ;
+            text-decoration: none;
+            overflow: hidden;
+            transition: 0.2s ;
+            &:hover{
+                color:#636e72;
+                background:#ffcccc;
+                box-shadow: 0 0 10px #ffcccc ,
+                            0 0 40px #ffcccc ,
+                            0 0 80px #ffcccc ;
+                transition-delay: 0.5s ;
+            }
+            &:hover span:nth-child(1){
+                left: 100% ;
+                transition: 0.5s ;
+            }
+            &:hover span:nth-child(2){
+                top: 100% ;
+                transition: 0.5s ;
+            }
+            &:hover span:nth-child(3){
+                right: 100% ;
+                transition: 0.5s ;
+            }
+            &:hover span:nth-child(4){
+                bottom: 100% ;
+                transition: 0.5s ;
+            }
+            span {
+                position: absolute;
+                display: block;
+                &:nth-child(1){
+                    left: -100% ;
+                    top: 0 ;
+                    width: 100% ;
+                    height: 2px ;
+                    background-image: linear-gradient(90deg,transparent,#00cec9) ;
+                    transition-delay: 0s ;
+                }
+                &:nth-child(2){
+                    right: 0% ;
+                    top: -100% ;
+                    width: 2px ;
+                    height: 100% ;
+                    background-image: linear-gradient(180deg,transparent,#00cec9) ;
+                    transition-delay: 0.25s ;
+                }
+                &:nth-child(3){
+                    right: -100% ;
+                    bottom: 0 ;
+                    width: 100% ;
+                    height: 2px ;
+                    background-image: linear-gradient(270deg,transparent,#00cec9) ;
+                    transition-delay: 0.50s ;
+                }
+                &:nth-child(4){
+                    left: 0% ;
+                    bottom: -100% ;
+                    width: 2px ;
+                    height: 100% ;
+                    background-image: linear-gradient(360deg,transparent,#00cec9) ;
+                    transition-delay: 0.75s ;
+                }
+            }
+        } 
+        input{
+            position: relative;
+            display: block;
+            margin-top: 20px ;
+            width: 200px ;
+            height: 3em ;
+            background: transparent;
+            color: #ffff ;
+            margin: 10px ;
+            text-align: center;
+            outline: none;
+            border: solid 1px #fff ; 
+            transition: 0.5s ;
+            //border-radius: 2px ;
+        }
+        .ansPage{
+            overflow: auto; 
+            max-height: 450px ;
+            width: 800px ;
+            display: flex ;
+            flex-direction: column; 
+            list-style: none;
+            position: relative; 
+            scrollbar-width: none; 
+            -ms-overflow-style: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            .songInfo{
+                position: relative; 
+                height: 50px ;
+                flex: 1 ;
+                display: flex;
+                flex-direction: row ; 
+                list-style: none;
+                color: #fff ;
+                margin-bottom: 10px ;
+                scrollbar-width: none; 
+                -ms-overflow-style: none;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+                li{
+                    flex: 1 ;
+                    position: relative ; 
+                    //background-color: green ;
+                    border-bottom: solid 1px white;
+                    padding: 10px;
+                    transition: 0.5s ;
+                    letter-spacing: 2px ;
+                    user-select: none;
+                    text-shadow: 5px 5px 5px black ;               
+                    white-space:nowrap ;
+                    overflow: hidden;
+                    text-overflow:ellipsis;
+                    &:nth-child(1){
+                        flex: 2 ;
+                        &::after{
+                            content:"SONG NAME";
+                            position: absolute;
+                            font-size: 0.6em ;
+                            right: 50px ;
+                            bottom: 2px ;
+                            text-decoration:overline  ;
+                        }
+                    }
+                    &:nth-child(2){
+                        flex: 1 ;
+                        &::after{
+                            content:"ARTIST";
+                            position: absolute;
+                            font-size: 0.6em ;
+                            bottom: 2px ;
+                            text-decoration:overline  ;
+                        }
+                    }
+                    &:nth-child(3){
+                        flex: 1 ;
+                        &::after{
+                            content:"ABLUM";
+                            position: absolute;
+                            font-size: 0.6em ;
+                            bottom: 2px ;
+                            text-decoration:overline  ;
+                        }
+                    }
+                    &:nth-child(4){
+                        flex: 1 ;
+                        letter-spacing: 1.5px ;
+                        font-size: 0.8em ;
+                        &::after{
+                            content: "DURATION";
+                            position: absolute;
+                            font-size: 0.6em;
+                            bottom: 2px;
+                            left: 0px;
+                            text-decoration: overline;
+                            letter-spacing: 2px;
+                        }
+                    }
+                }
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 70%;
+                    background: rgba(255, 204, 204,1.0);
+                    //border-radius: 25px;
+                    z-index: -1;
+                    transform: scaleY(0);
+                    transition: transform 0.5s;
+                    transform-origin: bottom;
+                }
+                &::after{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(255, 204, 204,1.0);
+                    //border-radius: 25px;
+                    z-index: -1;
+                    transform: scaleY(0);
+                    transition: transform 0.5s;
+                    transform-origin: bottom;
+                    filter: blur(30px);
+                }
+                &:hover{
+                    color: black ;
+                    font-size: 1.0em;
+                    transform: translateX(0px);
+                }
+                &:hover::before{
+                    transform: scaleY(1);
+                    transition: transform 0.5s;
+                    transform-origin: top ;
+                } 
+                &:hover::after{
+                    transform: scaleY(1);
+                    transition: transform 0.5s;
+                    transform-origin: top;
+                } 
+            }
+        }
+    }
+    .catBody{
+        position: relative ;
+        flex: 1 ;
+        margin: 0px ;
+        margin-top: 0px ;
+        //border-radius: 11%~"/"30% ;
+        -webkit-box-shadow: 0px -2px 7px rgb(83, 92, 104);
+        -moz-box-shadow: 0px -2px 7px rgb(83, 92, 104);
+        box-shadow: 0px -2px 7px rgb(83, 92, 104) ;
+        transition: 1s ;
+        .songRateShow{
+            position: absolute ;
+            width: 3px ;
+            height: 35px ;
+            top: -20px ;
+            left: 0px ;
+            background-color: rgb(241, 242, 246) ;
+            transition: 0.3s ;
+            /* ?Ӱ */
+            -webkit-box-shadow: 0px -2px 7px rgb(83, 92, 104);
+            -moz-box-shadow: 0px -2px 7px rgb(83, 92, 104);
+            box-shadow: 0px -2px 7px rgb(83, 92, 104) ;
+            //z-index: 2 ;
+        }
+        .bodyBackgroud{
+            position: absolute; 
+            top: 0 ;
+            left: 0 ;
+            width: 100% ;
+            height: 100% ;
+            background-color: rgb(178, 190, 195) ;
+            -webkit-filter: blur(10px); /* Chrome, Opera */
+            -moz-filter: blur(10px);       
+            -ms-filter: blur(10px);    
+            filter: blur(10px);  
+        }
+        .bodyBackgroud2{
+            position: absolute ;
+            width: 39% ;
+            height: 90% ;
+            left: 0% ;
+            //background-color: red ;
+            transform-origin: left ;
+            opacity: 0.8 ;
+            -webkit-filter: blur(5px); /* Chrome, Opera */
+            -moz-filter: blur(5px);       
+            -ms-filter: blur(5px);    
+            filter: blur(5px) ; 
+            transition: 0.6s ;
+            transform: translateX(-110%) ; 
+
+        }
+        .myLrcCont{
+            position: absolute ;
+            width: 61% ;
+            height: 90% ;
+            clip: rect(auto, auto, auto,-40px);
+            //background-color: red ;
+            background-color: rgba(45, 52, 54,1.0) ;
+            left: 39% ;
+            top:0% ;
+            //overflow-y: hidden ;
+            -webkit-box-shadow: 0px 0px 7px rgb(83, 92, 104);
+            -moz-box-shadow: 0px 0px 7px rgb(83, 92, 104);
+            box-shadow: 0px 0px 7px rgb(83, 92, 104) ;
+            transition: 0.6s ;
+            transform-origin: right ;
+            transform: translateX(110%) ;
+            .lrcbtn{
+                position: absolute ;
+                width: 40px ;
+                height:40px ;
+                background-color: rgb(223, 249, 251) ;
+                -webkit-box-shadow: 0px 0px 7px rgb(83, 92, 104);
+                -moz-box-shadow: 0px 0px 7px rgb(83, 92, 104);
+                box-shadow: 0px 0px 7px rgb(83, 92, 104) ;
+                transition: 0.3s ;
+                text-align: center ;
+                cursor: pointer ;
+                z-index: 1 ;
+                .iconfont {
+                    font-size: 25px ;
+                    text-align: center ;
+                    color: black ;
+                    line-height: 40px ;
+                    transition: 0.5s ;
+                    //text-shadow: 0px 0px 4px black ;
+                }
+                &::before{
+                    content:"" ;
+                    box-sizing: border-box ;
+                    position: absolute ;
+                    border: solid 2px rgb(126, 214, 223) ;
+                    width: 130% ;
+                    height: 130% ;
+                    left: 50% ;
+                    margin-left: -65% ;
+                    top: 50% ;
+                    margin-top: -65% ;
+                    transition: 0.3s ;
+                    transform: scale(0) ;
+                    transform-origin: 50% 50% ;
+                    -webkit-box-shadow: 0px 0px 7px rgb(83, 92, 104);
+                    -moz-box-shadow: 0px 0px 7px rgb(83, 92, 104);
+                    box-shadow: 0px 0px 7px rgb(83, 92, 104) ;
+                    z-index: -1 ;
+                }
+                &::after{
+                    content:"" ;
+                    box-sizing: border-box ;
+                    position: absolute ;
+                    border: solid 1px rgb(34, 166, 179) ;
+                    width: 150% ;
+                    height: 150% ;
+                    left: 50% ;
+                    margin-left: -75% ;
+                    top: 50% ;
+                    margin-top: -75% ;
+                    transition: 0.3s ;
+                    transform: scale(0) ;
+                    transform-origin: 50% 50% ;
+                    -webkit-box-shadow: 0px 0px 7px rgb(83, 92, 104);
+                    -moz-box-shadow: 0px 0px 7px rgb(83, 92, 104);
+                    box-shadow: 0px 0px 7px rgb(83, 92, 104) ;
+                    z-index: -1 ;
+                }
+                &:hover{
+                    opacity: 0.9 ;
+                    transform: rotateZ(45deg);
+                    //background-image: linear-gradient(125deg,#130f40,#30336b,#e056fd,#ff7979,#eb4d4b) ;
+                    background-size: 300%;
+                    animation: bgAnimation 5s infinite ;
+                    cursor: pointer ;
+                }
+                &:hover .iconfont{
+                    color: white ;
+                    font-size: 30px ;
+                }
+                &:hover::before{
+                    transform: scale(1) ;
+                    animation: btnRote1 2s infinite ;
+                }
+                &:hover::after{
+                    transform: scale(1) ;
+                    animation: btnRote2 2s infinite ;
+                }
+            }
+            .myComment{
+                left:-20px ;
+                top: 30px ;
+                &::before{
+                     border: solid 1px rgb(255, 118, 117) ;
+                }
+                &::after{
+                    border: solid 2px rgb(248, 165, 194)  ;
+                }
+                &:hover{
+                    background-image: linear-gradient(125deg,#130f40,#30336b,#e056fd,#ff7979,#eb4d4b) ;
+                }
+            }
+            .myBack{
+                left:-20px ;
+                top: 130px ;
+                &::before{
+                     border: solid 1px rgb(0, 184, 148) ;
+                }
+                &::after{
+                     border: solid 2px rgb(99, 205, 218)  ;
+                }
+                &:hover{
+                    background-image: linear-gradient(125deg,#63cdda,#546de5,#778beb,#18dcff,#32ff7e) ;
+                }
+            }
+            .lrcLoad{
+                left:-20px ;
+                top: 230px ;
+                &::before{
+                     border: solid 1px rgb(241, 196, 15) ;
+                }
+                &::after{
+                    border: solid 2px rgb(247, 215, 148)  ;
+                }
+                &:hover{
+                    background-image: linear-gradient(125deg,#ff9f1a,#fff200,#fffa65,#fab1a0,#ff7675) ;
+                }
+            }
+            #lyric{
+                position: absolute ;
+                display: flex ;
+                flex-direction:column;
+                align-self:center;
+                user-select: none; 
+                list-style:none;
+                width: 100% ;
+                //left: 10px ;
+                white-space:nowrap ;
+                text-align: center ;
+                overflow: auto ;
+                scrollbar-width: none; 
+                -ms-overflow-style: none;
+                transition: 0.5s ;
+                //background-color: red ;
+                li{
+                    box-sizing: border-box;
+                    min-width: 60% ;
+                    //max-width: 60% ;
+                    min-height: 40px ;
+                    max-height: 40px ;
+                    line-height:40px ;
+                    margin-bottom: 5px ;
+                    flex: 1 ;
+                    transition: 0.3s ;
+                    background-color: transparent ;
+                    text-align: center ;
+                    vertical-align: middle ; 
+                    text-shadow: 5px 5px 10px black;
+                    color:#fff;
+                    font-size: 0.8em ;
+                    font-weight: 300 ;
+                    letter-spacing: 2px;
+                }
+                &::-webkit-scrollbar {
+                    display: none;
+                } 
+            }
+            #comments{
+                position: absolute ;
+                display: flex ;
+                width: 70% ;
+                height: 100% ;
+                background-color: #ecf0f1 ;
+                top: 0 ;
+                right: 0 ;
+                -webkit-box-shadow: 0px 0px 7px rgb(189, 195, 199);
+                -moz-box-shadow: 0px 0px 7px rgb(189, 195, 199);
+                box-shadow: 0px 0px 7px rgb(189, 195, 199) ;
+                scrollbar-width: none; 
+                -ms-overflow-style: none;
+                flex-direction:column ;
+                align-items:center ;
+                overflow: auto ;
+                list-style: none ; 
+                transform: scaleX(0) ;
+                transform-origin: right ;
+                transition: 0.6s ;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+                div{
+                    margin-top: 10px ;
+                    text-align: left ;
+                    padding: 10px ;
+                    font-size: 1.2em ;
+                    letter-spacing: 3px ;
+                    font-weight: 300 ;
+                    user-select: none ; 
+                }
+                li{
+                    flex: 1 ;
+                    display: flex ;
+                    min-width: 90% ;
+                    max-width: 90% ;
+                    min-height: 140px ;
+                    max-height: 140px ;
+                    background-color: red ;
+                    margin-top: 40px ;
+                    position: relative ;
+                    background-color: rgb(178, 190, 195) ;
+                    -webkit-box-shadow: 0px 0px 7px black inset;
+                    -moz-box-shadow: 0px 0px 7px black inset;
+                    box-shadow: 0px 0px 7px black inset ;
+                    .userPic{
+                        flex: 0 ;
+                        box-sizing: border-box ;
+                        min-width: 80px ;
+                        max-width: 80px ;
+                        min-height: 80px ;
+                        max-height: 80px ;
+                        top: 0 ;
+                        left: 0 ;
+                        margin: 10px ;
+                        background-color: #b1b1b1 ;
+                        -webkit-box-shadow: 0px 0px 7px rgb(45, 52, 54);
+                        -moz-box-shadow: 0px 0px 7px rgb(45, 52, 54);
+                        box-shadow: 0px 0px 7px rgb(45, 52, 54) ;
+                    }
+                    .userName{
+                        position: absolute ;
+                        width: 80px ;
+                        height: 30px ;
+                        bottom: 20px ;
+                        padding: 10px ;
+                        font-size: 0.6em ;
+                        font-weight: 500 ;
+                        //background-color: yellow ;
+                        white-space:nowrap ;
+                        text-align: center ;
+                        text-shadow: 5px 5px 5px   rgb(45, 52, 54)  ;
+
+                    }
+                    .userWord{
+                        flex: 1 ;
+                        margin: 10px ;
+                        margin-left: 0 ;
+                        background-color: #ecf0f1 ;
+                        font-size: 0.8em ;
+                        text-indent: 2em;
+                        padding: 15px ;
+                        letter-spacing:2.5px;
+                        line-height: 2em ;
+                        overflow: auto ;
+                        text-shadow: 5px 5px 10px   rgb(45, 52, 54)  ;
+                        -webkit-box-shadow: 0px 0px 7px rgb(45, 52, 54);
+                        -moz-box-shadow: 0px 0px 7px rgb(45, 52, 54);
+                        box-shadow: 0px 0px 7px rgb(45, 52, 54) ;
+                        scrollbar-width: none; 
+                        -ms-overflow-style: none;
+                        &::-webkit-scrollbar {
+                            display: none;
+                        } 
+                    }
+                    .userWordTime {
+                        position: absolute ;
+                        box-sizing: border-box ;
+                        margin: 0 ;
+                        padding: 0 ;
+                        width: auto ;
+                        height: 2em ;
+                        font-size: 0.8em ;
+                        top: -20px ;
+                        left: 10px ;
+                        color: black ;
+                        text-shadow: 5px 5px 5px   rgb(45, 52, 54)  ;
+                        user-select: none; 
+                        white-space:nowrap ;
+                        text-align: center ;
+                        //line-height: 20px ;
+                        z-index: 1 ;
+                        &::after{
+                            content: "";
+                            position: absolute ;
+                            width: 130% ;
+                            height: 15px ;
+                            bottom: 0px ;
+                            right: 0 ;
+                            background-color: rgb(85, 239, 196) ;
+                            z-index: -1 ;
+                            -webkit-box-shadow: 5px 5px 7px rgb(45, 52, 54);
+                            -moz-box-shadow: 5px 5px 7px rgb(45, 52, 54);
+                            box-shadow: 5px 5px 7px rgb(45, 52, 54) ;
+                        }
+                    }
+                }
+            }
+        }
+        .showInfo {
+            position: absolute ;
+            width: 400px ;
+            height: 90% ;
+            left: 0 ;
+            top:  0; 
+            transition: 0.5s ;
+            //transform: translateX(-100%) ;
+            //background-color: red ;
+            background-image: radial-gradient(150% 167% at 100% 0% , transparent 60%  ,#81ecec,#55efc4,#ffeaa7 ) ;
+            .setInfo {
+                position: absolute;
+                box-sizing: border-box;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                transition: 0.4s;
+                //background-color: red ; 
+                //text-align: right;
+                display: flex;
+                flex-direction: column;
+                align-items:flex-end;
+                overflow: hidden;
+                span{
+                    position: relative ;
+                    margin-top: 15px ;
+                    //margin-right: 15px;
+                    max-height: 40px ;
+                    max-width: 60% ;
+                    text-align: right;
+                    padding: 10px ;
+                    font-size: 1em ;
+                    color: #2d3436 ;
+                    letter-spacing: 2px ;
+                    text-shadow: 5px 5px 5px   rgb(45, 52, 54)  ;
+                    user-select: none; 
+                    white-space:nowrap ;
+                    //overflow: hidden;
+                    transition: 0.5s ;
+                    a{
+                        transition: 0.5s ;
+                        color: #2d3436 ;
+                    }
+                    .infoDescrit{
+                        position: absolute ;
+                        bottom: -10px ;
+                        right: 0px ;
+                        font-size: 0.6em ;
+                        line-height: 1em ;
+                        padding: 5px ;
+                        transition: 0.5s ;
+                        border-bottom: solid 1px black ;
+                    }
+                    &::after{
+                        content: "" ;
+                        position: absolute;
+                        width: 10px ;
+                        right: 0 ;
+                        bottom: 5px ;
+                        border-top: solid 2px  #2d3436 ;
+                        animation :typeBlink 500ms steps(44) infinite normal ;
+                    }
+                    &:hover {
+                        background-color:  #2d3436 ;
+                        color: #b1b1b1 ;
+                    }
+                    &:hover a{
+                        color: #b1b1b1 ;
+                    }
+                    &:hover .iconfont{
+                        color: #b1b1b1 ;
+                    }
+                } 
+            }
+            .lightness{
+                position: absolute ;
+                bottom:0 ;
+                left: 0 ;
+                width: 400px ;
+                height: 533px ;
+                background-position: bottom ;
+                background: url("../img/rabbit.png");
+                .lightnessBack{
+                    position: absolute ;
+                    width: 150px ;
+                    height: 150px ;
+                    top: 145px ;
+                    left: 220px ;
+                    //background: url("../img/moon_2.png");   
+                    cursor: pointer;      
+                    div{
+                        position: absolute ;
+                        width: 150px ;
+                        height: 150px ;
+                        background-position: bottom ;
+                        background: url("../img/moon_2.png");  
+                        z-index: 11 ;
+                    }
+                    .iconfont{
+                        position: absolute ;
+                        width: 70px ;
+                        height: 70px ;
+                        top: 50% ;
+                        margin-top: -35px ;
+                        left: 50% ;
+                        color: rgba(250, 177, 160,0.5) ;
+                        margin-left: -35px ;
+                        line-height: 70px ;
+                        text-align: center ;
+                        font-size: 50px ;
+                        text-shadow: 0px 0px 10px rgb(250, 177, 160);
+                        transition: 0.5s ;
+                        transform: scale(0) ;
+                        transform-origin: center ;
+                        z-index: 10 ;
+                        cursor: pointer;
+                        &::after{
+                            content: "";
+                            position: absolute;
+                            width: 200%;
+                            height: 200%;
+                            top: 50%;
+                            margin-top: -100%;
+                            left: 50%;
+                            margin-left: -100%;
+                            border-radius: 50%;
+                            background-color: #fab1a0;
+                            -webkit-filter: blur(40px);
+                            -moz-filter: blur(40px);
+                            -ms-filter: blur(40px);
+                            filter: blur(30px);
+                        }
+                    }
+                }
+                .lightnessSet{
+                    position: absolute ;
+                    top:0 ;
+                    left: 0 ;
+                    width: 150px ;
+                    height: 150px ;
+                    //background-color: red ;
+                    background: url("../img/moon.png");
+                    z-index: 12 ;
+                }
+            }
+
+        }
+        .curPic {
+            position: absolute;
+            width: 24vw ;
+            height: 24vw ;
+            left:50% ;
+            margin-left: -12vw ;
+            top:40% ;
+            margin-top: -12vw ;
+            animation-duration: 0.6s  ;
+            transform: scaleX(1) ;
+            transition: 0.6s ;
+            animation-name: moveForPic1 ;
+            animation-duration: 0.6s  ;
+            animation-direction: normal ;
+            animation-iteration-count: 1 ;
+            animation-timing-function: linear ;
+            animation-fill-mode: forwards ;
+            -webkit-animation-play-state: paused;
+            -ms-animation-play-state: paused;
+            animation-play-state: paused;
+            user-select: none; 
+            .picMenu {
+                position: absolute ;
+                width: 100% ;
+                height: 80% ;
+                right: -65% ;
+                top: 50% ;
+                margin-top: -40% ;
+                //background-color: red ;
+                transition: 0.5s ;
+                transform: scaleX(0) ;
+                transform-origin: left ; 
+
+                li {
+                    position: absolute ;
+                    list-style: none ;
+                    box-sizing: border-box ; 
+                    width: 100% ;
+                    height: 33% ;
+                    //background-color: red ;
+                    border-bottom: solid 30px #fff ;
+                    box-shadow: -10px 10px 10px rgba(0,0,0,0.5) ;
+                    transition: 0.5s ;
+                    .descript {
+                        box-sizing: border-box ;
+                        position: absolute ;
+                        right: 40px ;
+                        bottom: -25px ;
+                        font-size: 0.6em ;
+                        line-height: 1em ;
+                        color: black ;
+                        transition: 0.5s ;
+                        padding: 5px ;
+                        //text-decoration: overline;
+                        border-bottom: solid 1px black ;
+                        user-select: none; 
+                        z-index: -1 ;
+                    }
+                    a {
+                        position: absolute ;
+                        right: 0 ;
+                        bottom: -5px ;
+                        text-decoration: none ;
+                        display: block ;
+                        line-height:100%;
+                        text-align: right; 
+                        transition: 0.5s ;
+                        color: #333 ;
+                        span{
+                            font-size: 1.5em ;
+                            letter-spacing: 3px ;
+                            color: #333 ;
+                            margin-right: 5px ;
+                            text-shadow: -10px 10px 4px rgba(0,0,0,0.5)  ;
+                            transition: 0.5s ;
+                        }
+                        .iconfont {
+                            font-size: 25px ;
+                            color: red ;
+                            line-height: 20px ;
+                            transition: 0.5s ;
+                            margin-right: 5px ;
+                            text-shadow: -10px 10px 4px red
+                        }
+                    }
+                    &:hover {
+                        opacity: 0.7 ;
+                        border-bottom: solid 30px rgba(255,255,255,0) ;
+                        background-image: linear-gradient(125deg,#55efc4,#00cec9,#00b894,#6c5ce7,#fd79a8,#fdcb6e,#ffeaa7,#d63031) ;
+                        background-size: 300%;
+                        animation: bgAnimation 5s infinite ;
+                    }
+                    &:hover a{
+                        bottom: 10px ;
+                    }
+                    &:hover span{
+                        color: #fff ;
+                        font-size: 1.6em ;
+                    }
+                    &:hover .descript{
+                        color: transparent ;
+                        border-bottom: solid 1px transparent ;
+                    }
+                    &:nth-child(1){
+                        transform: translateX(-30px);
+                        top:0%;
+                    }
+                    &:nth-child(2){
+                        transform: translateX(0px);
+                        top:33%;
+                    }
+                    &:nth-child(3){
+                        transform: translateX(-30px);
+                        top:66%;
+                    }
+                }
+            }
+        }
+        .songPic{
+            position: absolute ;
+            //display: block ;
+            box-sizing: border-box ;
+            width: 24vw ;
+            height: 24vw ;
+            border-radius: 50% ;
+            border: solid 8px #fff;
+            /* ?Ӱ */
+            -webkit-box-shadow: 0px 0px 11px black;
+            -moz-box-shadow: 0px 0px 11px black;
+            box-shadow: 0px 0px 11px black;
+            z-index: 1 ;
+            &+div{
+                position: absolute;
+                width: 26vw ;
+                height: 26vw ;
+                left:50% ;
+                margin-left: -13vw ;
+                top:50% ;
+                margin-top: -13vw ;
+                background-color: transparent ;
+                border-radius: 50% ;
+                box-shadow: 0 0 0 15px rgb(255, 255, 241) inset ;
+                z-index: 2 ;
+            } 
+        }
+        .songListBox {
+            position: absolute ;
+            right: 0 ;
+            width: 200px ;
+            height: 100% ;
+            z-index: 1 ;
+            .listName{
+                content:"";
+                position: absolute ;
+                height: 30px ;
+                bottom: 25% ;
+                right: 0 ;
+                border-top: solid 3px  rgb(45, 52, 54) ;
+                box-shadow: 5px 5px 5px  rgb(0, 0, 0);
+                text-shadow: 5px 5px 5px   rgb(45, 52, 54)  ;
+                text-align: center;
+                padding-top: 0px ;
+                padding-right: 15px ;
+                user-select: none; 
+                white-space:nowrap ;
+                &::after{
+                    content: "" ;
+                    position: absolute ;
+                    width: 130% ;
+                    height: 15px ;
+                    bottom: 0px ;
+                    right: 0 ;
+                    background-color: rgb(223, 249, 251) ;
+                    box-shadow: 5px 5px 5px  rgb(0, 0, 0);
+                    z-index: -1 ;
+                }
+            }
+            .songList {
+                position: absolute ;
+                right: -200px ;
+                top: 0px ;
+                width: 200px ;
+                transition: 0.6s ;
+                max-height: 70% ;
+                overflow: auto ;
+                //background-color: rgb(47, 54, 64) ;
+                list-style:none;
+                display: flex ;
+                flex-direction:column;
+                scrollbar-width: none; 
+                -ms-overflow-style: none;
+                //cursor: pointer ;
+                /* -webkit-box-shadow: 5px 5px 20px black;
+                -moz-box-shadow: 5px 5px 20px black;
+                box-shadow: 5px 5px 20px black */
+                li {
+                    box-sizing: border-box ;
+                    min-height: 40px ;
+                    max-height: 40px ;
+                    flex: 1 ;
+                    //background-color: rgb(40, 50, 60) ;
+                    //border-top: solid 2px #fff; 
+                    margin-bottom: -3px ;
+                    -webkit-box-shadow: 5px 3px 10px black;
+                    -moz-box-shadow: 5px 3px 10px black;
+                    box-shadow: 5px 3px 10px black;
+                    list-style: none ;
+                    font-size: 0.8em;
+                    text-shadow: 5px 5px 10px black;
+                    line-height: 40px;
+                    text-align: left;
+                    padding-left: 5px ;
+                    color: rgb(45, 52, 54);
+                    transform:translateX(50px);
+                    transition:color 0.8s, font-size 0.8s,transform 0.8s,background-color 1s ;
+                    user-select: none; 
+                    white-space:nowrap ;
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgb(129, 236, 236);
+                        //border-radius: 25px;
+                        z-index: -1;
+                        transform: scaleY(0);
+                        transition: transform 0.5s;
+                        transform-origin: bottom;
+                    }
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgb(129, 236, 236);
+                        //border-radius: 25px;
+                        z-index: -2;
+                        transform: scaleY(0);
+                        transition: transform 0.5s;
+                        transform-origin: bottom;
+                        filter: blur(30px);
+                    }
+                    &:hover{
+                        color: black ;
+                        font-size: 1.0em;
+                        transform: translateX(0px);
+                    }
+                    &:hover::before{
+                        transform: scaleY(1);
+                        transition: transform 0.5s;
+                        transform-origin: top ;
+                    } 
+                    &:hover::after{
+                        transform: scaleY(1);
+                        transition: transform 0.5s;
+                        transform-origin: top;
+                    } 
+                }
+                &::-webkit-scrollbar {
+                    display: none;
+                } 
+            }
+        }
+    }
+    footer{
+        position: absolute;
+        bottom: 0px ;
+        min-width: 100% ;
+        min-height: 10% ;
+        background-color:rgba(116, 125, 140,0.6);
+        /* ?Ӱ */
+        -webkit-box-shadow: 0px -8px 8px black;
+        -moz-box-shadow: 0px -8px 8px black;
+        box-shadow: 0px -8px 8px black;
+        display: flex ;
+        transition: 0.3s ;
+        .wave{
+            position: absolute;
+            bottom: 0 ;
+            height: 285px ;
+            width: 300% ;
+            bottom: -100px ;
+            overflow: auto; 
+            scrollbar-width: none; 
+            -ms-overflow-style: none;
+            &::-webkit-scrollbar {
+                display: none;
+            } 
+            .wave2{
+                position: absolute ;
+                width: 100% ;
+                height: 285px ;
+                background-image: url("../img/wave2.png") ;
+                background-repeat: repeat-x ;
+                transform: translateX(-250px) ;
+                //filter: drop-shadow(0px -3px 3px rgba(0, 0, 0, 1));
+            }
+            .wave1{
+                position: absolute ;
+                width: 100% ;
+                height: 285px ;
+                background-image: url("../img/wave1.png") ;
+                background-repeat: repeat-x ;
+                transform: translateX(0px);
+                //filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7));
+            }
+        }
+        
+        .Audio{
+        }
+        ul{
+            position: absolute ;
+            display: flex ;
+            bottom:55px ;
+            left: 20px ;
+            li {
+                list-style: none ;
+                margin: 0px ;
+                a {
+                    text-decoration: none ;
+                    display: block ;
+                    width: 150px ;
+                    height: 40px ;
+                    background: #fff ;
+                    text-align: left ;
+                    padding-left: 10px ;
+                    transform: rotate(-30deg) skewX(15deg) translate(0,0) ;
+                    transition: 0.5s ;
+                    box-shadow: -20px 20px 10px rgba(0,0,0,0.5) ;
+                    .iconfont {
+                        font-size: 20px ;
+                        color: red ;
+                        line-height: 20px ;
+                        transition: 0.5s ;
+                        padding-right: 14px ;
+                    }
+                    span {
+                        position: absolute ;
+                        top: 10px ;
+                        color: #333 ;
+                        letter-spacing: 3px ;
+                        transition: 0.5s ;
+                    }
+                }
+                a::before {
+                    content: "" ;
+                    position: absolute ;
+                    top:5px ;
+                    left: -10px ;
+                    height: 100% ;
+                    width: 10px ;
+                    background: #b1b1b1;
+                    transition: 0.5s ;
+                    transform: rotate(0deg) skewY(-45deg) ;
+                }
+                a::after {
+                    content: "" ;
+                    position: absolute ;
+                    bottom:-10px ;
+                    left: -5px ;
+                    height: 10px ;
+                    width: 100% ;
+                    background: #b1b1b1;
+                    transition: 0.5s ;
+                    transform: rotate(0deg) skewX(-45deg) ;
+                }
+                a:hover {
+                    transform: rotate(-20deg) skewX(15deg) translate(20px,-10px) ;
+                    box-shadow: -50px 50px 50px rgba(0,0,0,0.7) ;
+                    background-color: #dd4b38  ;
+                }
+                a:hover .iconfont {
+                    font-size: 40px ;
+                    color: rgb(255, 255, 255) ;
+                    /* 
+                    -webkit-box-shadow: 0px 0px 12px rgb(0, 184, 148);
+                    -moz-box-shadow: 0px 0px 12px rgb(0, 184, 148);
+                    box-shadow: 0px 0px 12px rgb(0, 184, 148); 
+                    */
+                }
+                a:hover span{
+                    color: rgb(255, 255, 255) ;
+                }
+                a:hover::after{
+                    background-color: #dd4b39 ;
+                }
+                a:hover::before{
+                    background-color: #A13A2B ;
+                }
+            }
+            
+            .myRandom {
+                position: absolute ;
+                left: 90px ;
+                bottom: -25px ;
+                width: 30px ;
+                height: 30px ;
+                transition: 0.5s ;
+                background-color: #fff ;
+                box-shadow: -20px 20px 10px rgba(0,0,0,0.5) ;
+                transform: rotate(-30deg) skewX(15deg) translate(0,0) ;
+                .iconfont {
+                    font-size: 20px ;
+                    color: red ;
+                    line-height: 20px ;
+                    transition: 0.5s ;
+                    padding-right: 14px ;
+                }
+            }
+            .myRandom::before {
+                content: "" ;
+                position: absolute ;
+                top:5px ;
+                left: -10px ;
+                height: 100% ;
+                width: 10px ;
+                background: #b1b1b1;
+                transition: 0.5s ;
+                transform: rotate(0deg) skewY(-45deg) ;
+            }
+            .myRandom::after {
+                content: "" ;
+                position: absolute ;
+                bottom:-10px ;
+                left: -5px ;
+                height: 10px ;
+                width: 100% ;
+                background: #b1b1b1;
+                transition: 0.5s ;
+                transform: rotate(0deg) skewX(-45deg) ;
+            }
+            .myRandom:hover {
+                transform: rotate(-30deg) skewX(15deg) translate(10px,-10px) ;
+                box-shadow: -50px 50px 50px rgba(0,0,0,0.7) ;
+                background-color: #dd4b38  ;
+                cursor: pointer ;
+            }
+            .myRandom:hover::after{
+                background-color: #dd4b39 ;
+            }
+            .myRandom:hover::before{
+                background-color: #A13A2B ;
+            }
+            .myRandom:hover .iconfont {
+                //font-size: 40px ;
+                color: rgb(255, 255, 255) ;
+            }
+        }
+        .songTitle{
+            z-index: 1 ;
+            font-family: sans-serif ;
+            position: absolute ;
+            bottom: 80% ;
+            right: 8% ; 
+            max-width: 50% ;
+            display: inline-block;
+            color:#ffff;
+            font-size: 2.5vw ;
+            transition: 0.5s ;
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; 
+            white-space:nowrap ;
+            text-shadow:
+                0px 2px 0px #c0c0c0,
+                0px 4px 0px #b0b0b0,
+                2px 2px 0px #a0a0a0,
+                4px 4px 0px #909090,
+                13px 13px 13px rgb(0, 0, 0);
+            .songAutor {
+                position: absolute ;
+                box-sizing: border-box;
+                height: 20px ;
+                top: -35px ;
+                right: 40% ;
+                font-size: 15px ;
+                letter-spacing: 3px;
+                font-weight: 500 ;
+                color: rgb(0, 0, 0) ;
+                //background-color: rgb(223, 249, 251) ;
+                transition: 0.3s ;
+                transform: scale(0) ;
+                text-shadow: 10px 10px 10px   rgb(45, 52, 54)  ;
+                white-space:nowrap ;
+                //key!!
+            }
+            .songAutor::after{
+                content: "" ;
+                position: absolute ;
+                width: 130% ;
+                height: 60% ;
+                bottom: 0 ;
+                left: -5px ;
+                background-color: rgb(223, 249, 251) ;
+                z-index: -1 ;
+            }
+            .songGroup {
+                position: absolute ;
+                font-weight: 10 ;
+                bottom: -45px ;
+                right: 10px ;
+                display: flex ;
+                font-size: 15px ;
+                letter-spacing: 3px ;
+                font-weight: 500 ;
+                color: rgb(0, 0, 0) ;
+                padding: 3px ;
+                transition: 0.3s ;
+                transform: scale(0) ;
+                text-shadow: 10px 10px 10px   rgb(45, 52, 54)  ;
+                white-space:nowrap ;
+                //key!!
+            }
+            .songGroup::after{
+                content: "" ;
+                position: absolute ;
+                width: 130% ;
+                height: 60% ;
+                bottom: 0 ;
+                right: 0 ;
+                background-color: rgb(223, 249, 251) ;
+                z-index: -1 ;
+            }
+        }
+        .songTitle::before {
+            content: "" ;
+            position: absolute ;
+            top: -3px ;
+            left: 0px ;
+            box-sizing: border-box ;
+            width: 100% ;
+            height: 3px ;
+            border-top: solid 3px  rgb(45, 52, 54) ;
+            box-shadow: 5px 5px 5px  rgb(0, 0, 0);
+            transform: scale(0) ; 
+            transition: 0.3s ;
+        }
+        .songTitle::after {
+            content: "" ;
+            position: absolute ;
+            bottom: 0 ;
+            margin-bottom: -12px ;
+            right: 0px ;
+            box-sizing: border-box ;
+            width: 100% ;
+            height: 3px ;
+            border-bottom: solid 3px rgb(45, 52, 54) ;
+            box-shadow: 5px 5px 5px  rgb(0, 0, 0);
+            transform: scale(0) ; 
+            transition: 0.3s ;
+        }
+        .songTitle:hover {
+            //color:#dd4b38 ;
+            transform: rotateY(10deg) translate(10px,-10px) ;
+        }
+        .songTitle:hover .songAutor {
+            transform: scale(1) ; 
+        }
+        .songTitle:hover .songGroup {
+            transform: scale(1) ; 
+        }
+        .songTitle:hover::before {
+            transform: scale(1) ; 
+        }
+        .songTitle:hover::after {
+            transform: scale(1) ; 
+        }
+    }
+}
