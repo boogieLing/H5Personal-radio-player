@@ -36,7 +36,7 @@
 ![](https://github.com/boogieLing/H5Personal-radio-player/blob/master/pic/main_2.png)
 ![](https://github.com/boogieLing/H5Personal-radio-player/blob/master/pic/search_1.png)
 
-<video src="pic\search2.mp4"></video>
+<video src="https://github.com/boogieLing/H5Personal-radio-player/blob/master/pic/search2.mp4"></video>
 
 
 
