@@ -30,6 +30,20 @@ body .lightCover {
   flex-direction: row ;
   position: relative ;
 }
+.header .myLogo {
+  height: 60px ;
+  width: 400px ;
+  font-size: 30px ;
+  letter-spacing: 5px ;
+  color: #2d3436;
+  user-select: none;
+  text-align: center;
+  line-height: 60px ;
+  font-weight: 700 ;
+  text-shadow: 2px 2px 1px #2d3436, -2px -2px 2px black;
+  transition: 0.5s;
+  transition-delay: 1s ;
+}
 .header .catEars1 {
   width: 0px ;
   height: 0px ;
@@ -140,6 +154,233 @@ main .songRateBack {
 main .songRateBack::before {
   content: "";
 }
+main .searchPage {
+  position: absolute ;
+  width: 100% ;
+  height: 100% ;
+  margin: 0 ;
+  padding: 0 ;
+  background-color: #1e272e;
+  display: flex ;
+  flex-direction: column ;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  transition: 0.5s;
+}
+main .searchPage a {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px ;
+  color: #f1f2f6;
+  text-transform: uppercase;
+  letter-spacing: 4px ;
+  font-size: 24px ;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.2s;
+}
+main .searchPage a:hover {
+  color: #636e72;
+  background: #ffcccc;
+  box-shadow: 0 0 10px #ffcccc, 0 0 40px #ffcccc, 0 0 80px #ffcccc;
+  transition-delay: 0.5s;
+}
+main .searchPage a:hover span:nth-child(1) {
+  left: 100% ;
+  transition: 0.5s;
+}
+main .searchPage a:hover span:nth-child(2) {
+  top: 100% ;
+  transition: 0.5s;
+}
+main .searchPage a:hover span:nth-child(3) {
+  right: 100% ;
+  transition: 0.5s;
+}
+main .searchPage a:hover span:nth-child(4) {
+  bottom: 100% ;
+  transition: 0.5s;
+}
+main .searchPage a span {
+  position: absolute;
+  display: block;
+}
+main .searchPage a span:nth-child(1) {
+  left: -100%;
+  top: 0 ;
+  width: 100% ;
+  height: 2px ;
+  background-image: linear-gradient(90deg, transparent, #00cec9);
+  transition-delay: 0s ;
+}
+main .searchPage a span:nth-child(2) {
+  right: 0% ;
+  top: -100%;
+  width: 2px ;
+  height: 100% ;
+  background-image: linear-gradient(180deg, transparent, #00cec9);
+  transition-delay: 0.25s;
+}
+main .searchPage a span:nth-child(3) {
+  right: -100%;
+  bottom: 0 ;
+  width: 100% ;
+  height: 2px ;
+  background-image: linear-gradient(270deg, transparent, #00cec9);
+  transition-delay: 0.5s;
+}
+main .searchPage a span:nth-child(4) {
+  left: 0% ;
+  bottom: -100%;
+  width: 2px ;
+  height: 100% ;
+  background-image: linear-gradient(360deg, transparent, #00cec9);
+  transition-delay: 0.75s;
+}
+main .searchPage input {
+  position: relative;
+  display: block;
+  margin-top: 20px ;
+  width: 200px ;
+  height: 3em ;
+  background: transparent;
+  color: #ffff;
+  margin: 10px ;
+  text-align: center;
+  outline: none;
+  border: solid 1px #fff;
+  transition: 0.5s;
+}
+main .searchPage .ansPage {
+  overflow: auto;
+  max-height: 450px ;
+  width: 800px ;
+  display: flex ;
+  flex-direction: column;
+  list-style: none;
+  position: relative;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+main .searchPage .ansPage::-webkit-scrollbar {
+  display: none;
+}
+main .searchPage .ansPage .songInfo {
+  position: relative;
+  height: 50px ;
+  flex: 1 ;
+  display: flex;
+  flex-direction: row ;
+  list-style: none;
+  color: #fff;
+  margin-bottom: 10px ;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+main .searchPage .ansPage .songInfo::-webkit-scrollbar {
+  display: none;
+}
+main .searchPage .ansPage .songInfo li {
+  flex: 1 ;
+  position: relative ;
+  border-bottom: solid 1px white;
+  padding: 10px;
+  transition: 0.5s;
+  letter-spacing: 2px ;
+  user-select: none;
+  text-shadow: 5px 5px 5px black ;
+  white-space: nowrap ;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+main .searchPage .ansPage .songInfo li:nth-child(1) {
+  flex: 2 ;
+}
+main .searchPage .ansPage .songInfo li:nth-child(1)::after {
+  content: "SONG NAME";
+  position: absolute;
+  font-size: 0.6em;
+  right: 50px ;
+  bottom: 2px ;
+  text-decoration: overline  ;
+}
+main .searchPage .ansPage .songInfo li:nth-child(2) {
+  flex: 1 ;
+}
+main .searchPage .ansPage .songInfo li:nth-child(2)::after {
+  content: "ARTIST";
+  position: absolute;
+  font-size: 0.6em;
+  bottom: 2px ;
+  text-decoration: overline  ;
+}
+main .searchPage .ansPage .songInfo li:nth-child(3) {
+  flex: 1 ;
+}
+main .searchPage .ansPage .songInfo li:nth-child(3)::after {
+  content: "ABLUM";
+  position: absolute;
+  font-size: 0.6em;
+  bottom: 2px ;
+  text-decoration: overline  ;
+}
+main .searchPage .ansPage .songInfo li:nth-child(4) {
+  flex: 1 ;
+  letter-spacing: 1.5px;
+  font-size: 0.8em;
+}
+main .searchPage .ansPage .songInfo li:nth-child(4)::after {
+  content: "DURATION";
+  position: absolute;
+  font-size: 0.6em;
+  bottom: 2px;
+  left: 0px;
+  text-decoration: overline;
+  letter-spacing: 2px;
+}
+main .searchPage .ansPage .songInfo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  background: #ffcccc;
+  z-index: -1;
+  transform: scaleY(0);
+  transition: transform 0.5s;
+  transform-origin: bottom;
+}
+main .searchPage .ansPage .songInfo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffcccc;
+  z-index: -1;
+  transform: scaleY(0);
+  transition: transform 0.5s;
+  transform-origin: bottom;
+  filter: blur(30px);
+}
+main .searchPage .ansPage .songInfo:hover {
+  color: black ;
+  font-size: 1em;
+  transform: translateX(0px);
+}
+main .searchPage .ansPage .songInfo:hover::before {
+  transform: scaleY(1);
+  transition: transform 0.5s;
+  transform-origin: top ;
+}
+main .searchPage .ansPage .songInfo:hover::after {
+  transform: scaleY(1);
+  transition: transform 0.5s;
+  transform-origin: top;
+}
 main .catBody {
   position: relative ;
   flex: 1 ;
@@ -148,6 +389,7 @@ main .catBody {
   -webkit-box-shadow: 0px -2px 7px #535c68;
   -moz-box-shadow: 0px -2px 7px #535c68;
   box-shadow: 0px -2px 7px #535c68;
+  transition: 1s ;
 }
 main .catBody .songRateShow {
   position: absolute ;
@@ -180,7 +422,6 @@ main .catBody .bodyBackgroud2 {
   width: 39% ;
   height: 90% ;
   left: 0% ;
-  background-color: red ;
   transform-origin: left ;
   opacity: 0.8;
   -webkit-filter: blur(5px);
@@ -889,6 +1130,7 @@ main footer {
   -moz-box-shadow: 0px -8px 8px black;
   box-shadow: 0px -8px 8px black;
   display: flex ;
+  transition: 0.3s;
 }
 main footer .wave {
   position: absolute;
@@ -918,7 +1160,6 @@ main footer .wave .wave1 {
   background-image: url("../img/wave1.png");
   background-repeat: repeat-x;
   transform: translateX(0px);
-  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.7));
 }
 main footer ul {
   position: absolute ;
