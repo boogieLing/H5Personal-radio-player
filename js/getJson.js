@@ -7,7 +7,10 @@ function ajaxGetWay(curUrl,curType,callback) {
         timeout:15000 ,
         async:false ,
         cache:false ,
-        success:callback
+        success:callback,
+        error:function(e){
+            console.log(e);
+        }
     }) ;
 }
 
@@ -52,6 +55,24 @@ function getDjIdList(ans) {
     }
     return djList ;
 }
+function getSingleSong(searchList,index) {
+    //使用新api
+    var curUrl="https://api.plsseer0qaq.top/?type=single&id="+searchList.list[index].songId.toString() ;
+    var ans=new Object();
+    ajaxGetWay(curUrl,"json",function (data,status,xhr) {
+            ans.song=searchList.list[index].song ;
+            ans.nickname=data["artist"] ;
+            ans.creator="NONE" ;
+            ans.brand=searchList.list[index].album ;
+            ans.lrc=data["lrc"] ;
+            ans.coverUrl=data["cover"] ;
+            ans.songid=searchList.list[index].songId ;
+            ans.songurl=data["url"] ;
+    });
+    console.log("single song search done") ;
+    return ans ;
+}
+
 function getNormalPlay(djId) {
     //使用新api
     var curUrl="https://api.plsseer0qaq.top/?type=playlist&id="+djId.toString() ;
@@ -74,14 +95,12 @@ function getExtraPlay(djId) {
     console.log("extra song list search done") ;
     return ans ;
 }
-
 function getNormalIdList(ans,extraAns) {
     var djList = new Object() ;
     var listLen=ans.length ;
     djList.length=listLen ;
     //console.log(listLen) ;
     djList.list=[] ;
-
     for(var i=0 ; i<listLen ; ++i ) 
     {
         var temp = new Object() ;
@@ -98,7 +117,42 @@ function getNormalIdList(ans,extraAns) {
         djList.list.push(temp) ;
     }
     return djList ;
-    
+}
+function searchSong(kerwords,type) {
+    var ans=new Object() ;
+    var curUrl="https://musicapi.leanapp.cn/search?keywords="+kerwords+"&type="+type.toString() ;
+    ajaxGetWay(curUrl,"json",function (data,status,xhr) {
+        ans=data ;
+    }) ;
+    return ans ;
+}
+function getSearchList(ans) {
+    var searchList = new Object() ;
+    var listLen=ans["result"]["songs"].length ;
+    searchList.length=listLen ;
+    //console.log(listLen) ;
+    searchList.list=[] ;
+    for( var i=0 ; i<listLen ; ++i )
+    {
+        var temp=new Object() ;
+        temp.song=ans["result"]["songs"][i]["name"] ;
+        temp.songId=ans["result"]["songs"][i]["id"] ;
+        temp.artist=ans["result"]["songs"][i]["artists"][0]["name"] ;
+        temp.album=ans["result"]["songs"][i]["album"]["name"] ;
+        temp.duration=formatDuring(ans["result"]["songs"][i]["duration"] );
+        searchList.list.push(temp) ;
+        //console.log(temp.song) ;
+    }
+    return searchList ;
+}
+function checked(searchList,index) {
+    var curUrl="https://musicapi.leanapp.cn/check/music?id="+searchList.list[index].songId.toString() ;
+    var status=new Object() ;
+    ajaxGetWay(curUrl,"json",function (data,status,xhr) {
+        status=data ;
+    }) ;
+    console.log(status["success"]) ;
+    return status["success"] ;
 }
 //以下操作内存
 function getMp3(djList,index,type){
@@ -119,6 +173,18 @@ function getPicBlur(djList,index)
 {
     return djList.list[index].blurCoverUrl ;
 }
+
+
+
+
+function formatDuring(mss) {
+    var days = parseInt(mss / (1000 * 60 * 60 * 24));
+    var hours = parseInt((mss % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = parseInt((mss % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = (mss % (1000 * 60)) / 1000;
+    return  hours + " h " + minutes + " min " + seconds + " s ";
+}
+
 
 $.fn.extend({
     lzhDrag: function (obj) {
