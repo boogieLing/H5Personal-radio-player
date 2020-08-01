@@ -10,13 +10,19 @@ var oComments ;
 $(document).ready(function() {
 
     var getAudioSucc=false ;
-    var getNormalAudioSucc=false ;
     var randomFlag=false ;
     var firPlay=true ;
     var picStatus=false ;
     var picHidden=false ;
     var myAudio ;
-    var djList ;
+    var djList={
+        length:0 ,
+        list:[]
+    } ;
+    var searchList={
+        length:0 ,
+        list:[]
+    } ; ;
     var type="song"
     var randomNum=1 ;
     var listLenth=0 ;
@@ -25,7 +31,7 @@ $(document).ready(function() {
     var picBlurUrl ;
     var targetNum=794975380 ;
     var targetNormalNum=2894610642 ;
-
+    myAudio = $("#Audio_1")[0] ; 
     $("#Audio_1").on("loadedmetadata",function () {
         if (!djList || listLenth==0 ) {
             console.log("Audio does not ready") ;
@@ -48,6 +54,7 @@ $(document).ready(function() {
         startAudio(randomNum) ;
         updateSongList(prevIndex,randomNum) ;
     }) ;
+    
     $(".lightnessSet").lzhDrag({
         startDown: function () {}, 
         startMove: function () {}, 
@@ -106,7 +113,6 @@ $(document).ready(function() {
         myAudio.currentTime = myAudio.duration * rate+myAudio.currentTime ;
         updateProgress() ;
     }) ; 
-
     $(".myPlay").click(function () {
         initAll(type) ;
     }) ;  
@@ -146,7 +152,7 @@ $(document).ready(function() {
     })
     $(".myHidden").click(function () {
        var animateTime=600 ;
-       if (getAudioSucc&&picHidden==false) {
+       if (picHidden==false) {
             $(".curPic").addClass("newPicHidden") ;
             //myAnimation(".curPic","picHidden",animateTime,"scale(0),translateX(-250px)") ;
             picHidden=true ;
@@ -202,6 +208,11 @@ $(document).ready(function() {
             console.log("djList does not ready") ;
         } 
     }) ;
+    $(".mySearch").click(function () {
+        $(".searchPage").toggleClass("bodyHidden") ;
+        $(".catBody").toggleClass("bodyHidden") ;
+        //$("footer").toggleClass("bodyHidden") ;
+    }) ;
     $(".myComment").click(function () {
         $("#comments").toggleClass("picMenuScale") ;
     }) ;
@@ -225,12 +236,33 @@ $(document).ready(function() {
             showComment() ;
         } else {}
     }) ;
-    $(".header .catEars1").click(function () {
-        
+    
+    $(".startSearch").click(function () {
+        var key=getKetWords() ;
+        $(".boxSearch").addClass("hiddenFormY") ;
+        if (""!=key) {
+            var temp=searchSong(key,1) ;
+            searchList=getSearchList(temp) ;
+            setSearchList(searchList) ;
+        } else {  }
+        setTimeout(function () {
+            $(".boxSearch").removeClass("hiddenFormY") ;
+        },2500) ;
     }) ;
-    $(".header .catEars2").click(function () {
-
-    }) ;
+    $("input[name='boxSearch']").on('keypress',function(event){
+        if(event.keyCode == 13) {  
+            var key=getKetWords() ;
+            $(".boxSearch").addClass("hiddenFormY") ;
+            if (""!=key) {
+                var temp=searchSong(key,1) ;
+                searchList=getSearchList(temp) ;
+                setSearchList(searchList) ;
+            } else {  }
+            setTimeout(function () {
+                $(".boxSearch").removeClass("hiddenFormY") ;
+            },2500) ;
+        }  
+   });
     $(".listName").click(function () {
         $(".songList").toggleClass("listMove") ;
     }) ;
@@ -239,6 +271,19 @@ $(document).ready(function() {
         randomNum=$(this).index() ;
         startAudio(randomNum)  ;
         updateSongList(prevIndex, randomNum ) ;
+    }) ;
+    $(".ansPage").on("click",".songInfo",function () {
+        var ans=new Object();
+        firPlay=false ;
+        type="song" ;
+        var prevIndex=randomNum ;
+        index=$(this).index() ;
+        ans=getSingleSong(searchList,index) ;
+        djList.list.unshift(ans) ;
+        ++listLenth ;
+        ++djList.length ;
+        randomNum=0 ;
+        reflushList() ;
     }) ;
     $(".wave").on('mousedown', event => {
         let ele_x = event.offsetX ,
@@ -286,7 +331,7 @@ $(document).ready(function() {
     }
     function startAudio(randomNum) {
         //console.log(randomNum) ;
-        console.log(type) ;
+        //console.log(type) ;
         if("song"==type){
             endUpateLrc() ;
             getLrc(djList,randomNum) ;
@@ -422,7 +467,6 @@ $(document).ready(function() {
                 var ans=getDjradioPlay(targetNum) ; 
                 djList=getDjIdList(ans) ;
                 listLenth=djList.length ;
-                myAudio = $("#Audio_1")[0] ; 
             }
         } else {
             if (getAudioSucc) {
@@ -433,7 +477,6 @@ $(document).ready(function() {
                 var extraAns=getExtraPlay(targetNormalNum) ; 
                 djList=getNormalIdList(ans,extraAns) ;
                 listLenth=djList.length ;
-                myAudio = $("#Audio_1")[0] ; 
             }
         }
         if (randomNum>=listLenth) {
@@ -445,17 +488,21 @@ $(document).ready(function() {
             } else {
                 randomNum=randomNum ;
             }
-             startAudio(randomNum) ;
-             setSongList( djList ) ; 
              firPlay=false ;
+             startAudio(randomNum) ;
+             setSongList(djList) ; 
              updateSongList(randomNum,randomNum) ;
              setTypeShow(type) ;
-
         } else {
              startAudioCon() ;  
         }
     }
-
+    function reflushList() {
+        startAudio(randomNum) ;
+        setSongList(djList) ; 
+        updateSongList(randomNum,randomNum) ;
+        setTypeShow(type) ;
+    }
 }) ;
 
 function myAnimation(className,animateName,animateTime,endStatus) {
@@ -492,7 +539,6 @@ function setSongList( songList ) {
         $(".songList").append(newInfor) ;
     }
 }
-
 function updateSongList(prev,next) {
     prev+=1 ;
     next+=1 ;
@@ -502,6 +548,29 @@ function updateSongList(prev,next) {
     var nextPos=".songList li:nth-of-type("+next.toString()+")" ;
     //console.log(nextPos) ;
     $(nextPos).addClass("listLight") ;
+}
+
+function getKetWords() {
+    var key=$("input[name='boxSearch']").val() ;
+    return key ;
+}
+function setSearchList(searchList) {
+    $(".ansPage").text("") ;
+    listLenth=searchList.length ;
+    for( var i=0 ; i<listLenth ; ++i ) {
+        /*var newInfor=songList.list[i].song+"-"+songList.list[i].nickname ;*/
+        var newInfo="<ul class=\"songInfo\">" 
+        var newName="<li>"+searchList.list[i].song+"</li>" ;
+        var newArtist="<li>"+searchList.list[i].artist+"</li>" ;
+        var newAlbum="<li>"+searchList.list[i].album+"</li>" ;
+        var newTime="<li>"+searchList.list[i].duration+"</li>" ;
+        /*if (newInfor.length>16) {
+            newInfor=newInfor.substring(0,16) ;
+            newInfor=newInfor+"..." ;
+        } else {}*/
+        newInfo= newInfo + newName + newArtist + newAlbum + newTime +"</ul>" ;
+        $(".ansPage").append(newInfo) ;
+    }
 }
 //转换音频时长显示
 function transTime(time) {
@@ -541,7 +610,9 @@ function getLrc(djList,index) {
                 lrc = ajax.responseText;  
                 oLRC=createLrcObj(lrc) ;
                 console.log(oLRC.ti+"lrc solve done.") ; 
-            } else {}
+            } else {
+                console.log("lrc solve error.") ; 
+            }
     };
     ajax.send(null) ;
 }
@@ -612,7 +683,9 @@ function getSongComment(djList,index) {
                 var curComments = JSON.parse(ajax.responseText);  
                 oComments=createCommentsObj(curComments) ;
                 console.log("comments solve done.") ; 
-            } else {}
+            } else {
+                console.log("comments solve error.") ; 
+            }
     };
     ajax.send(null) ;
 }
