@@ -31,10 +31,10 @@
 
 **层级**
 
-![](pic\main.png)
+![](https://github.com/boogieLing/H5Personal-radio-player/blob/master/pic/main.png)
 
-![](pic\main_2.png)
-![](pic\search_1.png)
+![](https://github.com/boogieLing/H5Personal-radio-player/tree/master/pic/main_2.png)
+![](https://github.com/boogieLing/H5Personal-radio-player/tree/master/pic/search_1.png)
 
 <video src="pic\search2.mp4"></video>
 
@@ -44,39 +44,39 @@
 
 **主页**
 
-![](pic\page_1.png)
+![](https://github.com/boogieLing/H5Personal-radio-player/tree/master/pic/page_1.png)
 
 
 
 **歌词页**
 
-![](pic\page_2.png)
+![](https://github.com/boogieLing/H5Personal-radio-player/tree/master/picpage_2.png)
 
 **评论页**
 
-![](pic\page_3.png)
+![](https://github.com/boogieLing/H5Personal-radio-player/tree/master/picpage_3.png)
 
 **信息页**
 
-![](pic\page_4.png)
+![](https://github.com/boogieLing/H5Personal-radio-player/tree/master/picpage_4.png)
 
 **搜索页**
 
-![](pic\page_5.png)
+![](https://github.com/boogieLing/H5Personal-radio-player/tree/master/picpage_5.png)
 
 
 
 ## 已实现功能
 
 1. 切换个人歌单/个人电台
-    ![](pic\use_1.png)
+    ![](https://github.com/boogieLing/H5Personal-radio-player/tree/master/picuse_1.png)
 
 2. INFO：个人详情页
 
 3. HIDDEN：收起图片并查看歌词
 
 4. 评论：查看对应评论
-    ![](pic\use_2.png)
+    ![](https://github.com/boogieLing/H5Personal-radio-player/tree/master/picuse_2.png)
 
 5. 返回：收起歌词
 
@@ -84,10 +84,10 @@
 
 7. 信息栏：作者、歌曲名、专辑名/歌单创建者/电台创建者，目前歌单/电台详情，目前歌单/电台名称。
 
-    ![image-20200801210842621](pic\use_3.png)
+    ![image-20200801210842621](https://github.com/boogieLing/H5Personal-radio-player/tree/master/picuse_3.png)
 
 8. 调节亮度：在个人详情页，将”暗月球“覆盖”发光月球“，可以根据覆盖面积调整亮度。
-    ![image-20200801211115577](D:\Code\web\cat\pic\use_4.png)
+    ![image-20200801211115577](https://github.com/boogieLing/H5Personal-radio-player/tree/master/picuse_4.png)
 
 9. 调节音量：拖动底部的白色波浪，可以根据波浪的高低调节音量。
 
