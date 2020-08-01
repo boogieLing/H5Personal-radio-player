@@ -461,6 +461,10 @@
   transform:rotate(0)
  }
 }
+
+.bodyHidden{
+  transform: translateY(200%);
+}
 .moonScale{
   transform: scale(1) !important ;
 }
@@ -567,6 +571,10 @@
     animation-timing-function: linear ;
    //animation-fill-mode: forwards ;
 }
+.hiddenFormY{
+  transform: scaleY(0);
+}
+
 @keyframes waveMove_1{
   0%{
     transform: translateX(0px);
